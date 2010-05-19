@@ -5,5 +5,5 @@ Feature: Summary of upcoming events
     I want to see a summary of upcoming events in London
     
     Scenario: Show upcoming events on homepage
-        Given I am on homepage
+        Given I am on the homepage
         Then I should see upcoming events
