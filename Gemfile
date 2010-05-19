@@ -19,13 +19,11 @@ gem 'mysql'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
-gem "database_cleaner"
-group :test do
-  gem "spork"
-  gem "cucumber-rails"
-  gem "cucumber", "0.7.2"
-  gem "rspec"
-  gem "rspec-rails", "2.0.0.beta.8"
-  gem "webrat"
-  gem "selenium-client"
-end
+gem "database_cleaner",               :group => :test
+gem "spork",                          :group => :test
+gem "cucumber-rails",                 :group => :test
+gem "cucumber", "0.7.2",              :group => :test
+gem "rspec",                          :group => :test
+gem "rspec-rails", "2.0.0.beta.8",    :group => :test
+gem "webrat",                         :group => :test
+gem "selenium-client",                :group => :test
