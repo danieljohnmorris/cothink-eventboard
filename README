@@ -1,8 +1,7 @@
 
 ###################################
-
 SEGMENTATION FAULT W/ RUBY 1.9.1
 
-> rvm use 1.9.2
-
+Tried 1.9.2, got other error
+Switched back to 1.9.1, with edge rails uncommented in Gemfile
 ###################################
