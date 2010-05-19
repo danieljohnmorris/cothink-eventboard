@@ -19,15 +19,13 @@ gem 'mysql'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
-# Bundle gems for certain environments:
-# gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
 gem "database_cleaner"
-gem "cucumber-rails"
-gem "cucumber", "0.7.2"
-gem "rspec"
-gem "rspec-rails", "2.0.0.beta.8"
-gem "webrat"
-gem "selenium-client"
+group :test do
+  gem "spork"
+  gem "cucumber-rails"
+  gem "cucumber", "0.7.2"
+  gem "rspec"
+  gem "rspec-rails", "2.0.0.beta.8"
+  gem "webrat"
+  gem "selenium-client"
+end
