@@ -6,4 +6,4 @@ Feature: Summary of upcoming events
     
     Scenario: Show upcoming events on homepage
         Given I am on the homepage
-        Then I should see upcoming events
+        Then I should see a list of upcoming events
