@@ -1,7 +1,9 @@
 Then /^I should see the site logo$/ do
-  pending # express the regexp above with the code you wish you had
+  page.should have_css('#masthead img.logo')
 end
 
 Then /^the see the site title$/ do
-  pending # express the regexp above with the code you wish you had
+  # within(:css, "#masthead") do
+    page.should have_content('The Business Diary')
+  # end
 end
