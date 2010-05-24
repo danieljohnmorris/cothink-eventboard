@@ -2,18 +2,18 @@ class Admin::OrganisationsController < ApplicationController
   # GET /admin_organisations
   # GET /admin_organisations.xml
   def index
-    @admin_organisations = Admin::Organisation.all
+    @organisations = Organisation.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @admin_organisations }
+      format.xml  { render :xml => @organisations }
     end
   end
 
   # GET /admin_organisations/1
   # GET /admin_organisations/1.xml
   def show
-    @organisation = Admin::Organisation.find(params[:id])
+    @organisation = Organisation.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class Admin::OrganisationsController < ApplicationController
   # GET /admin_organisations/new
   # GET /admin_organisations/new.xml
   def new
-    @organisation = Admin::Organisation.new
+    @organisation = Organisation.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class Admin::OrganisationsController < ApplicationController
 
   # GET /admin_organisations/1/edit
   def edit
-    @organisation = Admin::Organisation.find(params[:id])
+    @organisation = Organisation.find(params[:id])
   end
 
   # POST /admin_organisations
   # POST /admin_organisations.xml
   def create
-    @organisation = Admin::Organisation.new(params[:organisation])
+    @organisation = Organisation.new(params[:organisation])
 
     respond_to do |format|
       if @organisation.save
@@ -56,7 +56,7 @@ class Admin::OrganisationsController < ApplicationController
   # PUT /admin_organisations/1
   # PUT /admin_organisations/1.xml
   def update
-    @organisation = Admin::Organisation.find(params[:id])
+    @organisation = Organisation.find(params[:id])
 
     respond_to do |format|
       if @organisation.update_attributes(params[:organisation])
@@ -72,7 +72,7 @@ class Admin::OrganisationsController < ApplicationController
   # DELETE /admin_organisations/1
   # DELETE /admin_organisations/1.xml
   def destroy
-    @organisation = Admin::Organisation.find(params[:id])
+    @organisation = Organisation.find(params[:id])
     @organisation.destroy
 
     respond_to do |format|

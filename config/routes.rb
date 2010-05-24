@@ -1,8 +1,12 @@
 CothinkEventboard::Application.routes.draw do |map|
-  resources :organisations
-
+  
+  map.namespace :admin do |admin|
+    admin.index '/', :controller => 'index', :action => 'index'
+    admin.resources :organisations
+  end
+  
   map.root :controller => 'home'
-
+  
   get "home/index"
 
   # The priority is based upon order of creation:
