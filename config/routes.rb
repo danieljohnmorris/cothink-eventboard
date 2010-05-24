@@ -1,4 +1,6 @@
 CothinkEventboard::Application.routes.draw do |map|
+  resources :organisations
+
   map.root :controller => 'home'
 
   get "home/index"
