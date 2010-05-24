@@ -1,5 +1,5 @@
 Then /^I should see the site logo$/ do
-  page.should have_css('#masthead img.logo')
+  page.should have_css('#masthead h1 img.logo')
 end
 
 Then /^the see the site title$/ do
