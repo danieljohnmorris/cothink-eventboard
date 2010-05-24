@@ -14,6 +14,3 @@ Feature: Summary of upcoming events
         Given I am on the homepage
         When there are events happening soon
         Then I should see a list of upcoming events
-        And I should the site is initially focusing on London
-
-        
