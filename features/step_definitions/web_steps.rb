@@ -227,3 +227,9 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then /^I should see (?:an|a) (?:(info|error|success))? message saying "([^"]*)"$/ do |type,msg|
+  (all('p' + (type ? '.' + type : '')).select do |actual_msg|
+    actual_msg == msg
+  end).length.should == 1
+end
