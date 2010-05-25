@@ -11,7 +11,7 @@ describe "home/index.html.erb" do
     it "should display a helpful message saying there were none found" do
       render
       p response
-      response.should contain("Opps, couldn't find any events. Try being less specific about the type of event.")
+      response.should contain("Ooops, couldn't find any events. Try being less specific about the type of event.")
     end
   end
   
