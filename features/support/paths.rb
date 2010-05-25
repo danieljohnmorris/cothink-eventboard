@@ -11,6 +11,9 @@ module NavigationHelpers
     when /the homepage/
       '/'
 
+    when /the admin overview/
+      '/admin/'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
