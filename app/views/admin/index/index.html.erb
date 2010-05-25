@@ -6,9 +6,9 @@
     <li><%= link_to "Organisations", admin_organisations_path %></li>
 </ul>
 
-<div id="bulk-add-form-events">
+<div id="bulk-add-events">
     <h2>Bulk add events</h2>
-    <%= form_tag admin_path do -%>
+    <%= form_tag :url => {:controller => "admin", :action => "upload_events_csv"} do -%>
     <div><%= file_field_tag "CSV" %> </div>
     <div><%= submit_tag 'Upload CSV' %></div>
     <% end -%>

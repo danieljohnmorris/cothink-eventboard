@@ -4,11 +4,12 @@ Feature: Bulk ingest data into application
     As an admin
     I want to bulk ingest data into the app
 
+@dan
     Scenario: Find events CSV upload form
         Given I am on the admin overview
-        Then I should see "Bulk upload events"
+        Then I should see "Bulk add events"
+        And there should be the following css "#bulk-add-events form"
 
-@dan
     Scenario Outline: Upload CSV in admin
         Given I am on the admin overview
         When I upload a CSV at "<csv_path>"
