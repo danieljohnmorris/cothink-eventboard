@@ -6,5 +6,6 @@ Feature: Bulk ingest data into application
 
     Scenario: Upload CSV in admin
         Given I am on the admin overview
-        When I do a new bulk ingest, by uploading a CSV of 50 new entries
-        Then I should see '50 new events ingested'
+        When I do a new bulk ingest, by uploading a CSV of new entries
+        Then I should see 'new events ingested'
+        And all events should be saved
