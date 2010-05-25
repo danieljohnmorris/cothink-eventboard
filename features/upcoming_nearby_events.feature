@@ -12,5 +12,12 @@ Feature: Summary of upcoming events
             
     Scenario: Show upcoming events on homepage
         Given I am on the homepage
-        When there are events happening soon
-        Then I should see a list of upcoming events
+		And there are the following upcoming events
+			| title | datetime | organiser | location |
+			| "fun" | DateTime.new | "scientologists" | "here" |
+			| "biz" | DateTime.new | "crazies" | "there" |
+        Then I should see a list of upcoming events like this
+			| title | datetime | organiser | location |
+			| "fun" | "Tomorrow, 6pm" | "scientologists" | "here" |
+			| "biz" | "Wednesday 16th, 8pm" | "crazies" | "there" |
+

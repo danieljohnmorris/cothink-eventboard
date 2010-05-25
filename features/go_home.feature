@@ -4,6 +4,7 @@ Feature: Navigate to the homepage from anywhere
     As any user
     I want to be able to navigate to the homepage
 
+@focus
     Scenario: Go home thru logo link id
         Given I am not on the homepage
         And I click the site logo
