@@ -4,13 +4,12 @@ Feature: Summary of upcoming events
     As an event goer
     I want to see a summary of upcoming events in London
 	
-	@tim
     Scenario: Show prompt to add event if no upcoming events
         Given I am on the homepage
 		And There are no "events"
         Then I should see an info message saying "Oops, couldn't find any events. Try being less specific about the type of event." within ".events"
-    
 	
+	@tim
     Scenario: Show upcoming events on homepage
 		Given there are the following upcoming events
 		 | title  | start_time          | location | organisation   |
