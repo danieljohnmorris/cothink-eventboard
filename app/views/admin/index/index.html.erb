@@ -6,4 +6,10 @@
     <li><%= link_to "Organisations", admin_organisations_path %></li>
 </ul>
 
-<h2>Bulk upload events</h2>
+<div id="bulk-add-form-events">
+    <h2>Bulk add events</h2>
+    <%= form_tag admin_path do -%>
+    <div><%= file_field_tag "CSV" %> </div>
+    <div><%= submit_tag 'Upload CSV' %></div>
+    <% end -%>
+</div>
