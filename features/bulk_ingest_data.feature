@@ -4,7 +4,6 @@ Feature: Bulk ingest data into application
     As an admin
     I want to bulk ingest data into the app
 
-@focus
     Scenario: Find events CSV upload form
         Given I am on the admin overview
         Then I should see "Bulk upload events"
