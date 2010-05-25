@@ -12,6 +12,20 @@
     <h1><a id="go-home" href="/" title="Back to the homepage"><img class="logo" alt="The Business Diary" src="/images/logo1.png" /></a></h1>
 </div>
 
+<div id="messages">
+    <% if flash[:error] -%>
+    <p class='error'><%=h flash[:error] %></p>
+    <% end -%>
+
+    <% if flash[:success] -%>
+    <p class='notice'><%=h flash[:notice] %></p>
+    <% end -%>
+
+    <% if flash[:info] -%>
+    <p class='info'><%=h flash[:info] %></p>
+    <% end -%>
+</div>
+
 <%= yield %>
 
 </body>
