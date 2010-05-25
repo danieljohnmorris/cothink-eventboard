@@ -5,4 +5,4 @@ Feature: Filter events with tags
     Scenario: Go home
         Given I am not on the homepage
         And I click the site logo
-        Then I should go to the homepage
+        Then I should be on the homepage
