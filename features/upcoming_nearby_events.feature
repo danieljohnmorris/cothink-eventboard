@@ -8,7 +8,7 @@ Feature: Summary of upcoming events
     Scenario: Show prompt to add event if no upcoming events
         Given I am on the homepage
 		And There are no "events"
-        Then I should see an info message saying "Oops, couldn't find any events. Try being less specific about the type of event."
+        Then I should see an info message saying "Oops, couldn't find any events. Try being less specific about the type of event." within ".events"
     
 	
     Scenario: Show upcoming events on homepage
