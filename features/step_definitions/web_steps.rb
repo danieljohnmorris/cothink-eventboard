@@ -229,7 +229,8 @@ Then /^show me the page$/ do
 end
 
 Then /^I should see (?:an|a) (?:(info|error|success))? message saying "([^"]*)"$/ do |type,msg|
+p type, msg
   (all('p' + (type ? '.' + type : '')).select do |actual_msg|
-    actual_msg == msg
+    actual_msg.text == msg
   end).length.should == 1
 end
