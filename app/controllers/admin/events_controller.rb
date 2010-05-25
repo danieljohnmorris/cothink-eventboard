@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class Admin::EventsController < ApplicationController
   # GET /admin_events
   # GET /admin_events.xml
   def index
