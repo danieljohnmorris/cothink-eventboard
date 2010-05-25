@@ -8,9 +8,14 @@ Feature: Bulk ingest data into application
         Given I am on the admin overview
         Then I should see "Bulk upload events"
 
-    Scenario: Upload CSV in admin
+@dan
+    Scenario Outline: Upload CSV in admin
         Given I am on the admin overview
-        When upload a CSV
-            
-        Then I should see 'new events ingested'
-        And all events should be saved
+        When I upload a CSV at "<csv_path>"
+        Then I should see confirmation of "<csv_rows>" "new events ingested"
+        
+        Scenarios: Files
+            | csv_path                   | csv_rows |
+            | files/events_0_rows.csv    | 0        |
+            | files/events_10_rows.csv   | 10       |
+            | files/events_1376_rows.csv | 1376     |
