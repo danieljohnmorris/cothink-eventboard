@@ -1,7 +1,9 @@
 
 ###################################
-SEGMENTATION FAULT W/ RUBY 1.9.1
+SEGMENTATION FAULT W/ RUBY 1.9.1 AND 1.9.2
 
-Tried 1.9.2, got other error
-Switched back to 1.9.1, with edge rails uncommented in Gemfile
+USE 1.8.7 !!!
 ###################################
+
+spork cucumber --port 12345 &
+cucumber --drb --port 12345
