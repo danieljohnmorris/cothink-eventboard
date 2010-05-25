@@ -1,10 +1,9 @@
 CothinkEventboard::Application.routes.draw do |map|
-  resources :events
-
   
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
     admin.resources :organisations
+    admin.resources :events
   end
   
   map.root :controller => 'home'
