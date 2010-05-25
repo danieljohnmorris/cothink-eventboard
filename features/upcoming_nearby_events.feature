@@ -10,7 +10,7 @@ Feature: Summary of upcoming events
         Then I should see a message saying 'no upcoming events'
         And I should see a form for adding an event
     
-	@focus
+	@tim
     Scenario: Show upcoming events on homepage
 		Given there are the following upcoming events
 		 | title  | start_time          | location | organisation   |
