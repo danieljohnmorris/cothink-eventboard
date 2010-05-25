@@ -1,4 +1,6 @@
 CothinkEventboard::Application.routes.draw do |map|
+  get "about/index"
+
   
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
