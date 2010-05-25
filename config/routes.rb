@@ -1,14 +1,15 @@
 CothinkEventboard::Application.routes.draw do |map|
   get "about/index"
 
-  
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
     admin.resources :organisations
     admin.resources :events
   end
   
-  map.root :controller => 'home'
+  map.root '/',       :controller => 'home'
+  map.about '/about', :controller => 'about'
+  map.admin '/admin', :controller => 'admin'
   
   get "home/index"
 
