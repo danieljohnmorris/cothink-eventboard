@@ -1,6 +1,8 @@
-Feature: Filter events with tags
+Feature: Navigate to the homepage from anywhere
 
-    Assorted tasks to navigate around the site
+    So that I can get back to the start
+    As any user
+    I want to be able to navigate to the homepage
 
     Scenario: Go home thru logo link id
         Given I am not on the homepage
