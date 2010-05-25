@@ -7,7 +7,7 @@ CothinkEventboard::Application.routes.draw do |map|
     admin.resources :events
   end
   
-  map.root '/',       :controller => 'home'
+  map.root            :controller => 'home'
   map.about '/about', :controller => 'about'
   map.admin '/admin', :controller => 'admin'
   
