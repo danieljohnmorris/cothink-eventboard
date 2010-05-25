@@ -1,0 +1,13 @@
+<li class="event">
+  <div>
+    <h4><%=event.title %></h4>
+    <div>
+      <span class="day"><%= event.start_day %></span>
+      <span class="month"><%= event.start_month %></span>
+    </div>
+    <span class="time"><%= event.formatted_start_time %><span class="ampm"><%= event.start_ampm %></span></span>
+    <p><%= event.location %></p>
+    <p><%= event.description %></p>
+    <p><%= event.organisation.name %></p>
+  </div>
+</li>

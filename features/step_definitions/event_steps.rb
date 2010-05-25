@@ -8,10 +8,19 @@ end
 
 Then /^I should see a list of upcoming events like this$/ do |table|
   event_hashes = table.hashes
-  within('.events-list') do
-    all('.event').each do |event|
-      expected_event = event_hashes.shift
-      event('.title').should have_content(expected_event.title)
+  all('.events-list .event').length.should == 2
+  
+  # check presence and format
+  event_hashes.each do |event|
+    event.each do |field,value|
+      page.should have_content(value)
     end
   end
+  
+  # check ordering
+  all('.events-list .event h4').each do |event_title|
+      expected_event = event_hashes.shift
+      event_title.text.should == expected_event['title']
+  end
+  
 end
