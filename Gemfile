@@ -28,6 +28,7 @@ gem "rspec",                          :group => :test
 gem "rspec-rails", "2.0.0.beta.8",    :group => :test
 # gem "webrat",                         :group => :test
 gem "selenium-client",                :group => :test # needed with capybara?
-gem "capybara",                       :group => :test
+gem "capybara",                       :group => :test # drop in replacement for webrat
+gem "launchy",                        :group => :test # so you can do "Then show me the page" :D
 
-gem 'fastercsv'
+gem 'fastercsv' # for csv importing
