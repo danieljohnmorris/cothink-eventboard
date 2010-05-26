@@ -83,9 +83,22 @@ class Admin::EventsController < ApplicationController
 
   # POST /admin/events/ingest
   def ingest
-    count_ingested = Event.ingest_csv(params[:csv][:file])
-    flash[:success]="CSV import successful, #{count_ingested} events ingested"
-    raise count_ingested.inspect
-    # redirect_to admin_path
+    # TODO - move to model, hopefully rails will fix stupid mysqlcompat error!
+    saved_events = []
+    @parsed_file= FasterCSV.parse(params[:csv][:file], :headers => true, :skip_blanks => true) # parse=string, read=file!
+    @parsed_file.each do |row|
+        e = Event.new
+        e.title = row[0]
+        e.description = row[1]
+        e.start_date = Date.parse(row[2])
+        e.location = row[3]
+        e.source = row[4]
+        e.url = row[5]
+        e.organisation = Organisation.find_or_create_by_name(row[6])
+        saved_events << e if e.save
+    end
+
+    flash[:success]="CSV import successful, #{saved_events.length} events ingested"
+    redirect_to admin_path
   end
 end
