@@ -41,13 +41,16 @@ class Event < ActiveRecord::Base
     end
   end
   
-  def method_missing(method,*args)
+  def method_missing(method,*args,&block)
     if method.to_s =~ /^(start|end)_(ampm|time|day|month)$/
       _formatted_date($1 + '_date',$2)
     else
-      super(method,*args)
+      super(method,*args,&block)
     end
     
     events
   end
+  def respond_to?(sym)
+     sym =~ /^(start|end)_(ampm|time|day|month)$/ || super(sym)
+   end
 end
