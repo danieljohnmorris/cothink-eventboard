@@ -1,6 +1,6 @@
 # BULK INGEST
 
 When /^I upload a CSV at "([^\"]*)"$/ do |csv_path|
-  attach_file('CSV', csv_path)
+  attach_file('csv_file', File.join(RAILS_ROOT, 'features', csv_path))
   click_button "Upload CSV"
 end
