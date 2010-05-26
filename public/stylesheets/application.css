@@ -3,6 +3,30 @@ textarea {
     width: 400px;
 }
 
+/* Flash messages
+************************/
+
+#messages .error,
+#messages .success,
+#messages .info {
+    border: 1px solid;
+    padding: 10px;
+}
+
+#messages .error {
+    border-color: red;
+    color: red;
+}
+
+#messages .success {
+    border-color: green;
+    color: green;
+}
+
+#messages .info {
+    border-color: grey;
+    color: grey;
+}
 
 /* Event listing
 ************************/
