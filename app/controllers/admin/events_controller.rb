@@ -10,8 +10,8 @@ class Admin::EventsController < ApplicationController
     end
   end
 
-  # GET /admin_events/1
-  # GET /admin_events/1.xml
+  # GET /admin/events/1
+  # GET /admin/events/1.xml
   def show
     @event = Event.find(params[:id])
 
@@ -21,8 +21,8 @@ class Admin::EventsController < ApplicationController
     end
   end
 
-  # GET /admin_events/new
-  # GET /admin_events/new.xml
+  # GET /admin/events/new
+  # GET /admin/events/new.xml
   def new
     @event = Event.new
 
@@ -32,7 +32,7 @@ class Admin::EventsController < ApplicationController
     end
   end
 
-  # GET /admin_events/1/edit
+  # GET /admin/events/1/edit
   def edit
     @event = Event.find(params[:id])
   end
@@ -53,8 +53,8 @@ class Admin::EventsController < ApplicationController
     end
   end
 
-  # PUT /admin_events/1
-  # PUT /admin_events/1.xml
+  # PUT /admin/events/1
+  # PUT /admin/events/1.xml
   def update
     @event = Event.find(params[:id])
 
@@ -69,8 +69,8 @@ class Admin::EventsController < ApplicationController
     end
   end
 
-  # DELETE /admin_events/1
-  # DELETE /admin_events/1.xml
+  # DELETE /admin/events/1
+  # DELETE /admin/events/1.xml
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
@@ -79,5 +79,13 @@ class Admin::EventsController < ApplicationController
       format.html { redirect_to(admin_events_url) }
       format.xml  { head :ok }
     end
+  end
+
+  # POST /admin/events/ingest
+  def ingest
+    count_ingested = Event.ingest_csv(params[:csv][:file])
+    flash[:success]="CSV import successful, #{count_ingested} events ingested"
+    raise count_ingested.inspect
+    # redirect_to admin_path
   end
 end
