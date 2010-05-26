@@ -1,5 +1,6 @@
 require 'fastercsv'
 class Event < ActiveRecord::Base
+  validates_presence_of :title, :start_date, :location # minimum useful fields
   
   belongs_to :organisation
   
@@ -28,6 +29,8 @@ class Event < ActiveRecord::Base
 
   def _formatted_date(date,piece)
     date = self.send(date)
+    return "" unless date # otherwise get errors
+
     if piece == 'ampm'
       date.strftime('%p').downcase
     elsif piece == 'day'
@@ -47,10 +50,9 @@ class Event < ActiveRecord::Base
     else
       super(method,*args,&block)
     end
-    
-    events
   end
+
   def respond_to?(sym)
-     sym =~ /^(start|end)_(ampm|time|day|month)$/ || super(sym)
-   end
+    sym =~ /^(start|end)_(ampm|time|day|month)$/ || super(sym)
+  end
 end
