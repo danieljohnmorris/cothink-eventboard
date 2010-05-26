@@ -11,3 +11,4 @@ log/cucumber.log
 log/test.log
 log/production.log
 tmp/pids/server.pid
+capybara-*.html
