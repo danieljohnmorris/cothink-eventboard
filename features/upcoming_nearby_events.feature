@@ -12,11 +12,11 @@ Feature: Summary of upcoming events
 	@tim
     Scenario: Show upcoming events on homepage
 		Given there are the following upcoming events
-		 | title  | start_time          | location | organisation   |
+		 | title  | start_date          | location | organisation   |
 		 | mental | 18-10-2010 18:00:00 | fun land | scientologists |
 		 | biz    | 12-10-2010 19:00:00 | biz land | fsb            |
 		When I am on the homepage
         Then I should see a list of upcoming events like this
-		 | title  | start_time    | location | organisation   |
-		 | biz    | 12th Oct, 6pm | biz land | fsb            |
-		 | mental | 18th Oct, 7pm | fun land | scientologists |
+		 | title  | start_date | start_time | location | organisation   |
+		 | biz    | 12 Oct     | 6pm        | biz land | fsb            |
+		 | mental | 18 Oct     | 7pm        | fun land | scientologists |
