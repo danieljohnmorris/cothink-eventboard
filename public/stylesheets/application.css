@@ -8,10 +8,26 @@ textarea {
 ************************/
 .events-list {
 	padding:0;
+	margin:0;
 }
-.events-list .event {
-	list-style-type:none;
-}
+	.events-list .event {
+		list-style-type:none;
+		position:relative;
+	}
+		.events-list h4 {
+			margin-top:0;
+		}
+		.events-list .nontime {
+			position:absolute;
+			left:55px;
+		}
+		.events-list .datetime {
+			position:absolute;
+			left:0;
+		}
+		.events-list .event .time {
+			font-size:.75em;
+		}
 .event-calendar-page {
 	display:block;
 	width:40px;
