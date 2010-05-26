@@ -1,4 +1,3 @@
-Given /^There are no "([^"]*)"$/ do |model|
-  the_model = model.camelize.constantize.new
-  DatabaseCleaner.clean_with :truncation, {:only => the_model.tableize}
+Given /^There are no "([^"]*)"$/ do |model_name|
+  DatabaseCleaner.clean_with :truncation, {:only => [model_name.tableize]}
 end

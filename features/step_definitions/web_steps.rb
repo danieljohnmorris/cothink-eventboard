@@ -228,8 +228,29 @@ Then /^show me the page$/ do
   save_and_open_page
 end
 
-Then /^I should see (?:an|a) (?:(info|error|success))? message saying "([^"]*)"$/ do |type,msg|
-  (all('p' + (type ? '.' + type : '')).select do |actual_msg|
-    actual_msg == msg
-  end).length.should == 1
+Then /^I should see (?:an|a) (?:(info|error|success))? message saying "([^"]*)"(?: within "([^\"]*)")?$/ do |type,msg,within_css|
+  to_do = Proc.new do |actual_msg|
+    (all('p' + (type ? '.' + type : '')).select do |actual_msg|
+      actual_msg.text == msg
+    end).length.should == 1
+  end
+  
+  if within_css
+    within(within_css,&to_do)
+  else
+    to_do.call
+  end
+  
+end
+
+Then /^I should see (?:an|a) (?:(info|error|success))? flash message saying "([^"]*)"$/ do |type,msg|
+
+  to_do = Proc.new do |actual_msg|
+    (all('p' + (type ? '.' + type : '')).select do |actual_msg|
+      actual_msg.text == msg
+    end).length.should == 1
+  end
+  
+  within('#messages',&to_do)
+  
 end

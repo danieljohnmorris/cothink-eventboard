@@ -1,32 +1,44 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-<head>
-  <title>The Business Diary</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-
-<div id="masthead">
-    <h1><a id="go-home" href="/" title="Back to the homepage"><img class="logo" alt="The Business Diary" src="/images/logo1.png" /></a></h1>
-</div>
-
-<div id="messages">
-    <% if flash[:error] -%>
-    <p class='error'><%=h flash[:error] %></p>
-    <% end -%>
-
-    <% if flash[:success] -%>
-    <p class='notice'><%=h flash[:notice] %></p>
-    <% end -%>
-
-    <% if flash[:info] -%>
-    <p class='info'><%=h flash[:info] %></p>
-    <% end -%>
-</div>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>
+      The Business Diary
+    </title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div id="doc3" class="yui-t7">
+    
+      <div id="masthead" role="banner">
+        <h1>
+          <a id="go-home" href="/" title="Back to the homepage" name="go-home">
+            <img class="logo" alt="The Business Diary" src="/images/logo1.png">
+          </a>
+        </h1>
+      </div>
+      
+      <div id="bd" role="main">
+        <div class="yui-g">
+          <div id="messages">
+            <% if flash[:error] -%>
+            <p class='error'>
+              <%=h flash[:error] %>
+            </p><% end -%><% if flash[:success] -%>
+            <p class='notice'>
+              <%=h flash[:notice] %>
+            </p><% end -%><% if flash[:info] -%>
+            <p class='info'>
+              <%=h flash[:info] %>
+            </p><% end -%><%= yield %>
+          </div>
+        </div>
+      </div>
+      
+      <div id="ft" role="contentinfo">
+        <!-- no footer content yet --!>
+      </div>
+    </div>
+  </body>
 </html>
