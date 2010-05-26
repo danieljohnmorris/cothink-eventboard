@@ -8,8 +8,8 @@
 
 <div id="bulk-add-events">
     <h2>Bulk add events</h2>
-    <%= form_tag :url => {:controller => "admin", :action => "upload_events_csv"} do -%>
-    <div><%= file_field_tag "CSV" %> </div>
-    <div><%= submit_tag 'Upload CSV' %></div>
+    <%= form_for :csv, :url => "/admin/events/ingest", :html => { :multipart => true, :method => :post } do |f| -%>
+        <div><%= f.file_field "file" %> </div>
+        <div><%= f.submit 'Upload CSV' %></div>
     <% end -%>
 </div>
