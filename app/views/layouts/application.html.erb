@@ -25,14 +25,23 @@
             <% if flash[:error] -%>
             <p class='error'>
               <%=h flash[:error] %>
-            </p><% end -%><% if flash[:success] -%>
-            <p class='notice'>
-              <%=h flash[:notice] %>
-            </p><% end -%><% if flash[:info] -%>
+            </p>
+            <% end -%>
+            
+            <% if flash[:success] -%>
+            <p class='success'>
+              <%=h flash[:success] %>
+            </p>
+            <% end -%>
+            
+            <% if flash[:info] -%>
             <p class='info'>
               <%=h flash[:info] %>
-            </p><% end -%><%= yield %>
+            </p>
+            <% end -%>
           </div>
+          
+          <%= yield %>
         </div>
       </div>
       
