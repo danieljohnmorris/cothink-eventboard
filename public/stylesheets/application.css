@@ -2,3 +2,33 @@ textarea {
     height: 100px;
     width: 400px;
 }
+
+
+/* Event listing
+************************/
+.events-list {
+	padding:0;
+}
+.events-list .event {
+	list-style-type:none;
+}
+.event-calendar-page {
+	display:block;
+	width:40px;
+	height:40px;
+	border:1px solid #ddd;
+}
+	.event-calendar-page .month,.event-calendar-page .day {
+		display:block;
+		text-align:center;
+	}
+	.event-calendar-page .month {
+		height:40%;
+		background:#2D4DCE;
+		color:#fff;
+		font-size:0.75em;
+	}
+	.event-calendar-page .day {
+		height:35%;
+		margin-top:5%;
+	}
