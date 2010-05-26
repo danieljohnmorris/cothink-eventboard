@@ -24,4 +24,7 @@ class Event < ActiveRecord::Base
       super(method,*args,&block)
     end
   end
+  def respond_to?(sym)
+     sym =~ /^(start|end)_(ampm|time|day|month)$/ || super(sym)
+   end
 end
