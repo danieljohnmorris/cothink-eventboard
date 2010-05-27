@@ -11,7 +11,6 @@ gem 'fastercsv' # for csv importing
 # deploy gems
 gem "capistrano"
 
-
 gem "shadow_puppet", :git => 'git://github.com/snappycode/shadow_puppet.git', :branch => "master"
 
 # Bundle edge Rails instead:
