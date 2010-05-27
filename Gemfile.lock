@@ -185,11 +185,17 @@ specs:
     version: 1.2.18
 - shadow_puppet: 
     version: 0.3.2
+    source: 0
 - spork: 
     version: 0.8.3
 - will_paginate: 
     version: 3.0.pre
-hash: 9c428d8edf124d26139aac2eab45e75ec95ebc22
+hash: b690543907f9d2d47a10ae2d70d4c70dfaa64921
 sources: 
+- Git: 
+    uri: git://github.com/snappycode/shadow_puppet.git
+    branch: master
+    git: git://github.com/snappycode/shadow_puppet.git
+    ref: 4c887e599b1e0a489261dfe0c40e538821705bf2
 - Rubygems: 
     uri: http://rubygems.org
