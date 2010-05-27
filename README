@@ -14,3 +14,8 @@ cucumber --drb --port 12345
 ## Remove previous associated gems before switching between different rails beta versions
 
 gem uninstall rails railties actionmailer actionpack activemodel activerecord activeresource activesupport
+
+###################################
+## Install new gems and relock bundle (need to lock for deploy, so gets versioned)
+
+bundle install --relock

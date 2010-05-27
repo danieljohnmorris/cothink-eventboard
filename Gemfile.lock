@@ -28,10 +28,18 @@ dependencies:
     group: 
     - :test
     version: = 2.0.0.beta.8
+  factory_girl: 
+    group: 
+    - :test
+    version: ">= 0"
   cucumber-rails: 
     group: 
     - :test
     version: ">= 0"
+  will_paginate: 
+    group: 
+    - :default
+    version: = 3.0.pre
   selenium-client: 
     group: 
     - :test
@@ -40,6 +48,10 @@ dependencies:
     group: 
     - :test
     version: = 0.7.2
+  hpricot: 
+    group: 
+    - :test
+    version: ">= 0"
   launchy: 
     group: 
     - :test
@@ -141,8 +153,12 @@ specs:
     version: 0.3.1
 - database_cleaner: 
     version: 0.5.2
+- factory_girl: 
+    version: 1.2.4
 - fastercsv: 
     version: 1.5.3
+- hpricot: 
+    version: 0.8.2
 - launchy: 
     version: 0.3.5
 - mysql: 
@@ -169,7 +185,9 @@ specs:
     version: 1.2.18
 - spork: 
     version: 0.8.3
-hash: dbad970f6b7209e9fdea2fe517f8a226cb48ee93
+- will_paginate: 
+    version: 3.0.pre
+hash: 68170e04689e2c25264620011614ca991c6d3832
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
