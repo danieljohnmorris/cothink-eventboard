@@ -23,8 +23,7 @@ Feature: Bulk ingest data into application
     Scenario Outline: Upload blank CSV in admin
         Given I am on the admin overview
         When I upload a CSV at "<csv_path>"
-        Then show me the page
-        And I should see "<message>"
+        Then I should see "<message>"
 
         Scenarios:
             | csv_path                | message                         |
