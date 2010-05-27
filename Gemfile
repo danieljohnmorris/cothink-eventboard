@@ -5,7 +5,7 @@ gem 'rails', '3.0.0.beta3'
 gem 'mysql'
 gem "capistrano"
 gem 'fastercsv' # for csv importing
-gem 'will_paginate'
+gem 'will_paginate', '3.0.pre'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
