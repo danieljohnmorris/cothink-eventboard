@@ -18,7 +18,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: cothink_eventboard_development
+  database: thebusinessdiary_development
   pool: 5
   username: root
   password:
@@ -31,21 +31,21 @@ test: &test
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: cothink_eventboard_test
+  database: thebusinessdiary_test
   pool: 5
   username: root
   password:
   socket: /var/run/mysqld/mysqld.sock
 
 production:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: cothink_eventboard_production
-  pool: 5
-  username: root
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
-
+    adapter: mysql
+    encoding: utf8
+    reconnect: false
+    database: thebusinessdiary_production
+    pool: 5
+    username: thebusinessdiary
+    password: yfhA=8
+    socket: /var/run/mysqld/mysqld.sock
+    
 cucumber:
   <<: *test

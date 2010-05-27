@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
-
 gem 'rails', '3.0.0.beta3'
+gem "pg", :group => :production # for heroku
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -32,5 +32,3 @@ gem "capybara",                       :group => :test # drop in replacement for 
 gem "launchy",                        :group => :test # so you can do "Then show me the page" :D
 
 gem 'fastercsv' # for csv importing
-
-gem "pg", :group => :production # for heroku
