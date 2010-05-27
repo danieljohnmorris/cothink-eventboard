@@ -19,3 +19,8 @@ gem uninstall rails railties actionmailer actionpack activemodel activerecord ac
 ## Install new gems and relock bundle (need to lock for deploy, so gets versioned)
 
 bundle install --relock
+
+###################################
+## libxml2 install for nokogiri gem
+
+sudo apt-get install libxslt-dev libxml2-dev
