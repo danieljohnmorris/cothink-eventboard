@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag 'application', 'scaffold', 'yui/yui' %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
+
   </head>
   <body>
     <div id="doc3" class="yui-t7">
@@ -18,8 +19,13 @@
           </a>
         </h1>
       </div>
-      
+          
       <div id="bd" role="main">
+          <!-- <div class="yui-g">
+              <div id="catfish">
+                  Float bar test
+              </div>
+          </div> -->
         <div class="yui-g">
           <div id="messages">
             <% if flash[:error] -%>
@@ -46,8 +52,10 @@
       </div>
       
       <div id="ft" role="contentinfo">
-        <!-- no footer content yet --!>
+        <!-- no footer content yet -->
       </div>
     </div>
+
+    <%= render :partial => 'layouts/uservoice' %>
   </body>
 </html>

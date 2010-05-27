@@ -1,9 +1,16 @@
 
 ###################################
-SEGMENTATION FAULT W/ RUBY 1.9.1 AND 1.9.2
+## SEGMENTATION FAULT W/ RUBY 1.9.1 AND 1.9.2
 
 USE 1.8.7 !!!
+
 ###################################
+## Run cucumber faster - use spork!
 
 spork cucumber --port 12345 &
 cucumber --drb --port 12345
+
+###################################
+## Remove previous associated gems before switching between different rails beta versions
+
+gem uninstall rails railties actionmailer actionpack activemodel activerecord activeresource activesupport

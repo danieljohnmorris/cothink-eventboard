@@ -86,6 +86,7 @@ class Admin::EventsController < ApplicationController
     # TODO - move to model, hopefully rails will fix stupid mysqlcompat error!
     saved_events = []
     @parsed_file= FasterCSV.parse(params[:csv][:file], :headers => true, :skip_blanks => true) # parse=string, read=file!
+    
     @parsed_file.each do |row|
         e = Event.new
         e.title = row[0]
@@ -97,8 +98,14 @@ class Admin::EventsController < ApplicationController
         e.organisation = Organisation.find_or_create_by_name(row[6])
         saved_events << e if e.save
     end
-
-    flash[:success]="CSV import successful, #{saved_events.length} events ingested"
+    
+    flash[:success], flash[:error] = nil # try to appease cuke :(
+    if saved_events.length < 1
+      flash[:error]="The CSV you uploaded was empty!"
+    else
+      flash[:success]="CSV import successful, #{saved_events.length} events ingested"
+    end
+      
     redirect_to admin_path
   end
 end
