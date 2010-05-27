@@ -3,13 +3,14 @@ Feature: Summary of upcoming events
     So that I see events I might want to attend
     As an event goer
     I want to see a summary of upcoming events in London
+
+	Background
+		Given There are no "events"
 	
     Scenario: Show prompt to add event if no upcoming events
         Given I am on the homepage
-		And There are no "events"
         Then I should see an info message saying "Oops, couldn't find any events. Try being less specific about the type of event." within ".events"
 	
-	@tim
     Scenario: Show upcoming events on homepage
 		Given there are the following upcoming events
 		 | title  | start_date          | location | organisation   |
@@ -20,3 +21,12 @@ Feature: Summary of upcoming events
 		 | title  | start_date | start_time | location | organisation   |
 		 | biz    | 12 Oct     | 6pm        | biz land | fsb            |
 		 | mental | 18 Oct     | 7pm        | fun land | scientologists |
+		
+	# probably shouldn't bother doing this yet - design will change
+	# Scenario: Pagniate upcoming events
+	# 	Given there are "10" random "Event"
+	# 	And pagination items per page for "Event" is set to "4"
+	# 	When I am on the homepage
+	# 	Then I should see "4" events
+	# 	And I should see "2" other pages in the paginator, comprised of "6" more items 
+		

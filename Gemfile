@@ -5,6 +5,7 @@ gem 'rails', '3.0.0.beta3'
 gem 'mysql'
 gem "capistrano"
 gem 'fastercsv' # for csv importing
+gem 'will_paginate', '3.0.pre'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,5 +31,7 @@ gem "rspec",                          :group => :test
 gem "rspec-rails", "2.0.0.beta.8",    :group => :test
 # gem "webrat",                         :group => :test
 gem "selenium-client",                :group => :test # needed with capybara?
+gem "hpricot",                        :group => :test
+gem "factory_girl",                   :group => :test
 gem "capybara",                       :group => :test # drop in replacement for webrat
 gem "launchy",                        :group => :test # so you can do "Then show me the page" :D
