@@ -29,5 +29,9 @@ gem "rspec-rails", "2.0.0.beta.8",    :group => :test
 # gem "webrat",                         :group => :test
 gem "selenium-client",                :group => :test # needed with capybara?
 gem "capybara",                       :group => :test
+gem "hpricot",                        :group => :test
+gem "factory_girl",                   :group => :test
 
 gem 'fastercsv'
+
+gem 'will_paginate', '3.0.pre'

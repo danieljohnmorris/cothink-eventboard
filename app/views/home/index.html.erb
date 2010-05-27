@@ -3,6 +3,7 @@
     <ul class="events-list">
     	<%= render :partial => 'event', :collection => @events %>
   	</ul>
+  	<%= will_paginate @events %>
   <% else %>
   	<p class="info">Oops, couldn't find any events. Try being less specific about the type of event.</p>
   <% end %>

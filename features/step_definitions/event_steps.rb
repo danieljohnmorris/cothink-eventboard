@@ -24,3 +24,7 @@ Then /^I should see a list of upcoming events like this$/ do |table|
   end
   
 end
+
+Then /^I should see "([^\"]*)" events$/ do |events_count|
+  all('.events-list .event').length.should == events_count.to_i
+end

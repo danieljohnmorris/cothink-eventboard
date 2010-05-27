@@ -254,3 +254,6 @@ Then /^I should see (?:an|a) (?:(info|error|success))? flash message saying "([^
   within('#messages',&to_do)
   
 end
+
+Then /^I should see "([^\"]*)" other pages in the paginator, comprised of "([^\"]*)" more items$/ do |arg1, arg2|
+end
