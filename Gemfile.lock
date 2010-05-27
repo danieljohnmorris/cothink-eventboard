@@ -12,10 +12,6 @@ dependencies:
     group: 
     - :default
     version: = 3.0.0.beta3
-  pg: 
-    group: 
-    - :production
-    version: ">= 0"
   mysql: 
     group: 
     - :default
@@ -24,15 +20,19 @@ dependencies:
     group: 
     - :test
     version: ">= 0"
-  rspec-rails: 
-    group: 
-    - :test
-    version: = 2.0.0.beta.8
   database_cleaner: 
     group: 
     - :test
     version: ">= 0"
+  rspec-rails: 
+    group: 
+    - :test
+    version: = 2.0.0.beta.8
   cucumber-rails: 
+    group: 
+    - :test
+    version: ">= 0"
+  selenium-client: 
     group: 
     - :test
     version: ">= 0"
@@ -40,15 +40,15 @@ dependencies:
     group: 
     - :test
     version: = 0.7.2
-  selenium-client: 
+  launchy: 
     group: 
     - :test
+    version: ">= 0"
+  capistrano: 
+    group: 
+    - :default
     version: ">= 0"
   capybara: 
-    group: 
-    - :test
-    version: ">= 0"
-  launchy: 
     group: 
     - :test
     version: ">= 0"
@@ -101,6 +101,18 @@ specs:
     version: 3.0.0.beta3
 - bundler: 
     version: 0.9.25
+- highline: 
+    version: 1.5.2
+- net-ssh: 
+    version: 2.0.22
+- net-scp: 
+    version: 1.0.2
+- net-sftp: 
+    version: 2.0.4
+- net-ssh-gateway: 
+    version: 1.0.1
+- capistrano: 
+    version: 2.5.18
 - culerity: 
     version: 0.2.10
 - nokogiri: 
@@ -135,8 +147,6 @@ specs:
     version: 0.3.5
 - mysql: 
     version: 2.8.1
-- pg: 
-    version: 0.9.0
 - thor: 
     version: 0.13.6
 - railties: 
@@ -159,7 +169,7 @@ specs:
     version: 1.2.18
 - spork: 
     version: 0.8.3
-hash: 7d5e24743a7d613dd345067a7e9b0f6b236b6a11
+hash: dbad970f6b7209e9fdea2fe517f8a226cb48ee93
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
