@@ -41,14 +41,14 @@ textarea {
 		.events-list h4 {
 			margin-top:0;
 		}
-		.events-list .nontime {
-			position:absolute;
-			left:55px;
-		}
-		.events-list .datetime {
-			position:absolute;
-			left:0;
-		}
+		/*.events-list .nontime {
+					position:absolute;
+					left:55px;
+				}
+				.events-list .datetime {
+					position:absolute;
+					left:0;
+				}*/
 		.events-list .event .time {
 			font-size:.75em;
 		}
