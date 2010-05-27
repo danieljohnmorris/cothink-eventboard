@@ -3,9 +3,14 @@ gem 'rails', '3.0.0.beta3'
 # gem "pg", :group => :production # for heroku
 
 gem 'mysql'
-gem "capistrano"
-gem 'fastercsv' # for csv importing
 gem 'will_paginate', '3.0.pre'
+
+# admin-only gems
+gem 'fastercsv' # for csv importing
+
+# deploy gems
+gem "capistrano"
+gem "shadow_puppet"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,6 +28,7 @@ gem 'will_paginate', '3.0.pre'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
+# testing gems
 gem "database_cleaner",               :group => :test
 gem "spork",                          :group => :test
 gem "cucumber-rails",                 :group => :test
