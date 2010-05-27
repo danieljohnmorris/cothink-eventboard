@@ -3,6 +3,49 @@ textarea {
     width: 400px;
 }
 
+/* Floating bar
+************************/
+
+/* catfish and 'position:fixed' emulation */
+/*#catfish {
+    position:fixed;
+    bottom:0;
+    background-color: red;
+    padding:0;
+    height: 79px;
+    cursor: pointer;
+    margin: 0; 
+    width:100%;
+}
+    #catfish h3{
+        overflow:hidden;
+        background: transparent url(images/catfish.gif) no-repeat left bottom;
+        width:279px;
+        height:79px;
+        float:left
+    }
+
+    #catfish ul{
+        margin: 30px 16px 0pt 0pt; 
+        padding: 0pt; 
+        float: right; 
+        font-size: x-small; 
+        list-style-type: none;
+    }
+
+    #catfish ul li a{
+        color:#FFCC00;
+    }
+
+    #catfish p#catch{
+        margin: 40px 0pt 0pt 292px; 
+        color: #fff
+    }
+
+html {
+    padding:0 0 58px 0;
+}*/
+    
 /* Flash messages
 ************************/
 
@@ -30,6 +73,7 @@ textarea {
 
 /* Event listing
 ************************/
+
 .events-list {
 	padding:0;
 	margin:0;

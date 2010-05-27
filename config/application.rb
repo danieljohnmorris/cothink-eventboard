@@ -36,6 +36,8 @@ module CothinkEventboard
     #   g.template_engine :erb
     #   g.test_framework  :test_unit, :fixture => true
     # end
+    
+    config.cookie_secret = "some secret phrase of at least 30 characters"
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
