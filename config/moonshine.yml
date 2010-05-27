@@ -7,8 +7,11 @@
 #:domain_aliases:
 #  - assets1.zomgblog.technicalpickles.com
 #  - assets2.zomgblog.technicalpickles.com
-#:scm: git
-:repository: git@github.com:danieljohnmorris/cothink_eventboard.git
+
+# :scm: git
+:repository: git@github.com:danieljohnmorris/cothink-eventboard.git
+# :set: branch, "moonshine"
+
 # Use :app_symlinks to setup directories under public/ that you want to persist
 # across deployments. They'll be symlinked to the shared directory.
 #:app_symlinks:
