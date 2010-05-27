@@ -40,6 +40,10 @@ dependencies:
     group: 
     - :default
     version: = 3.0.pre
+  snappycode-shadow_puppet: 
+    group: 
+    - :default
+    version: ">= 0"
   selenium-client: 
     group: 
     - :test
@@ -57,10 +61,6 @@ dependencies:
     - :test
     version: ">= 0"
   capistrano: 
-    group: 
-    - :default
-    version: ">= 0"
-  shadow_puppet: 
     group: 
     - :default
     version: ">= 0"
@@ -183,19 +183,15 @@ specs:
     version: 1.3.2
 - selenium-client: 
     version: 1.2.18
-- shadow_puppet: 
+- snappycode-shadow_puppet: 
     version: 0.3.2
-    source: 0
 - spork: 
     version: 0.8.3
 - will_paginate: 
     version: 3.0.pre
-hash: b690543907f9d2d47a10ae2d70d4c70dfaa64921
+hash: 9d576d3a3e5f2264b481d8183c77dba17f42ff5c
 sources: 
-- Git: 
-    uri: git://github.com/snappycode/shadow_puppet.git
-    branch: master
-    git: git://github.com/snappycode/shadow_puppet.git
-    ref: 4c887e599b1e0a489261dfe0c40e538821705bf2
 - Rubygems: 
     uri: http://rubygems.org
+- Rubygems: 
+    uri: http://gemcutter.org

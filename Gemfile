@@ -1,4 +1,6 @@
 source 'http://rubygems.org'
+source 'http://gemcutter.org'
+
 gem 'rails', '3.0.0.beta3'
 # gem "pg", :group => :production # for heroku
 
@@ -12,6 +14,7 @@ gem 'fastercsv' # for csv importing
 gem "capistrano"
 
 # gem "shadow_puppet", :git => 'git://github.com/snappycode/shadow_puppet.git', :branch => "master"
+gem 'snappycode-shadow_puppet'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
