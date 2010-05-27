@@ -32,3 +32,5 @@ gem "capybara",                       :group => :test # drop in replacement for 
 gem "launchy",                        :group => :test # so you can do "Then show me the page" :D
 
 gem 'fastercsv' # for csv importing
+
+gem "pg", :group => :production # for heroku
