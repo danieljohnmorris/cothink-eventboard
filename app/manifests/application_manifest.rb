@@ -4,8 +4,6 @@ Puppet::Util::Log.level = :debug
 
 class ApplicationManifest < Moonshine::Manifest::Rails
 
-  file '/etc/mysql/conf.d/binlog.cnf', :ensure => :present, :content => template('app/manifests/templates/binlog.cnf')
-
   # The majority of your configuration should be in <tt>config/moonshine.yml</tt>
   # If necessary, you may provide extra configuration directly in this class
   # using the configure method. The hash passed to the configure method is deep
@@ -33,6 +31,8 @@ class ApplicationManifest < Moonshine::Manifest::Rails
     # If you've already told Moonshine about a package required by a gem with
     # :apt_gems in <tt>moonshine.yml</tt> you do not need to include it here.
     # package 'some_native_package', :ensure => :installed
+
+    file '/etc/mysql/conf.d/binlog.cnf', :ensure => :present, :content => template('app/manifests/templates/binlog.cnf')
 
     # some_rake_task = "/usr/bin/rake -f #{configuration[:deploy_to]}/current/Rakefile custom:task RAILS_ENV=#{ENV['RAILS_ENV']}"
     # cron 'custom:task', :command => some_rake_task, :user => configuration[:user], :minute => 0, :hour => 0
