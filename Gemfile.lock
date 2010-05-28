@@ -160,11 +160,12 @@ specs:
 - puppet: 
     version: 0.24.8
 - danieljohnmorris-shadow_puppet: 
-    version: 0.3.3
+    version: 0.3.4
 - database_cleaner: 
     version: 0.5.2
 - factory_girl: 
-    version: 1.2.4
+    version: 1.2.3
+    source: 0
 - fastercsv: 
     version: 1.5.3
 - hpricot: 
@@ -189,8 +190,13 @@ specs:
     version: 0.8.3
 - will_paginate: 
     version: 3.0.pre
-hash: 2a6833c41c40ab4638baa22cf7bdecd9b307e266
+hash: 7f91b2f7d4d3e6457ff7c9f4d84e151631f5d5cd
 sources: 
+- Git: 
+    uri: git://github.com/szimek/factory_girl.git
+    branch: rails3
+    git: git://github.com/szimek/factory_girl.git
+    ref: b4b7d25018a14e781796ed651518ec79f2d0e52d
 - Rubygems: 
     uri: http://rubygems.org
 - Rubygems: 
