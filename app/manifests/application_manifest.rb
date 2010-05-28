@@ -3,6 +3,9 @@ require "#{File.dirname(__FILE__)}/../../vendor/plugins/moonshine/lib/moonshine.
 Puppet::Util::Log.level = :debug
 
 class ApplicationManifest < Moonshine::Manifest::Rails
+
+  file '/etc/mysql/conf.d/binlog.cnf', :ensure => :present, :content => template('app/manifests/templates/binlog.cnf')
+
   # The majority of your configuration should be in <tt>config/moonshine.yml</tt>
   # If necessary, you may provide extra configuration directly in this class
   # using the configure method. The hash passed to the configure method is deep
