@@ -8,11 +8,11 @@ module EventsHelper
   # render events, and week and days for all distinct dates
   def render_events(events)
     output = ''
+    last_date =  Date.parse('1970-1-1')
     events.each do |event|
       
       week, calendar_page = '',''
       
-      last_date ||= Date.parse('1970-1-1')
       unless last_date.strftime('%W') == event.start_date.strftime('%W')
         week = render_week(event.start_date)
       end
@@ -23,6 +23,7 @@ module EventsHelper
       output += render(:partial => 'home/event',:locals => {:event=>event, :week=>week, :calendar_page=>calendar_page})
       
       last_date = event.start_date
+      
     end
     output
   end

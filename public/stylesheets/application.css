@@ -80,24 +80,23 @@ html {
 }
 	.events-list .event {
 		list-style-type:none;
-		position:relative;
+		overflow:auto;
 	}
 		.events-list h4 {
 			margin-top:0;
 		}
-		/*.events-list .nontime {
-					position:absolute;
-					left:55px;
-				}
-				.events-list .datetime {
-					position:absolute;
-					left:0;
-				}*/
 		.events-list .event .time {
 			font-size:.75em;
 		}
+	.events-list .week {
+		background:#D6E2F3;
+		font-size:1.5em;
+		padding:0.5em;
+		margin:0.5em 0;
+	}
 .event-calendar-page {
 	display:block;
+	float:right;
 	width:40px;
 	height:40px;
 	border:1px solid #ddd;

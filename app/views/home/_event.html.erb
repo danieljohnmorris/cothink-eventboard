@@ -1,5 +1,6 @@
 <%= week %>
 <li class="event">
+  <%= calendar_page %>
   <div class="nontime">
     <h4><%=event.title %></h4>
     <ul class="data">
@@ -11,5 +12,4 @@
   <div class="datetime">
     <span class="time"><%= event.start_time %><span class="ampm"><%= event.start_ampm %></span></span>
   </div>
-  <%= calendar_page %>
 </li>
