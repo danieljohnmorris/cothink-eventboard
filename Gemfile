@@ -7,7 +7,6 @@ gem 'rails', '3.0.0.beta3'
 gem 'mysql'
 gem 'will_paginate', '3.0.pre'
 
-# admin-only gems
 gem 'fastercsv' # for csv importing
 
 # deploy gems
@@ -42,7 +41,8 @@ gem "rspec",                          :group => :test
 gem "rspec-rails",                    :group => :test
 # gem "webrat",                         :group => :test
 gem "selenium-client",                :group => :test # needed with capybara?
-gem "hpricot",                        :group => :test
-gem "factory_girl",                   :group => :test
-gem "capybara",                       :group => :test # drop in replacement for webrat
+gem "capybara",                       :group => :test  # drop in replacement for webrat
 gem "launchy",                        :group => :test # so you can do "Then show me the page" :D
+gem "hpricot",                        :group => :test
+gem "factory_girl",                   :group => :test,
+  :git => "git://github.com/szimek/factory_girl.git", :branch => "rails3"
