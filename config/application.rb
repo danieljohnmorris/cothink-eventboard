@@ -37,6 +37,8 @@ module CothinkEventboard
     #   g.test_framework  :test_unit, :fixture => true
     # end
     
+    config.eager_load_paths = ['models', 'controllers', 'helpers'] 
+
     config.secret_token = "some secret phrase of at least 30 characters"
 
     # Configure the default encoding used in templates for Ruby 1.9.
