@@ -28,3 +28,23 @@ end
 Then /^I should see "([^\"]*)" events$/ do |events_count|
   all('.events-list .event').length.should == events_count.to_i
 end
+
+
+Given /^there are (\d+) random events over the next month$/ do
+  
+  test_start = Time.new
+  
+  for i in 1..30
+    Factory.create(:event, :start_date => test_start + 1.days)
+  end
+  
+  
+end
+
+Then /^I should see 4 week dividers$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see 30 date markers$/ do
+  pending # express the regexp above with the code you wish you had
+end

@@ -1,7 +1,7 @@
 <div class="events">
   <% unless @events.empty? %>
     <ul class="events-list">
-    	<%= render :partial => 'event', :collection => @events %>
+    	<%= raw render_events @events %>
   	</ul>
   	<%= will_paginate @events %>
   <% else %>

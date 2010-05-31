@@ -1,4 +1,6 @@
+<%= week %>
 <li class="event">
+  <%= calendar_page %>
   <div class="nontime">
     <h4><%=event.title %></h4>
     <ul class="data">
@@ -8,10 +10,6 @@
     </ul>
   </div>
   <div class="datetime">
-    <div class="event-calendar-page">
-      <span class="month"><%= event.start_month %></span>
-      <span class="day"><%= event.start_day %></span>
-    </div>
     <span class="time"><%= event.start_time %><span class="ampm"><%= event.start_ampm %></span></span>
   </div>
 </li>
