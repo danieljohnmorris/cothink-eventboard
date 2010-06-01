@@ -3,5 +3,3 @@ Feature: Organisations feature
   As Carmen
   I want to be able to look at a profile page for them
   And filter my search results to only include a certain organiser
-
-  

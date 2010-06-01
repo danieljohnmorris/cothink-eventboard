@@ -1,8 +1,8 @@
 <%= week %>
-<li class="event">
+<li class="event" id="event-id-<%=CGI.escape(event.title)%>">
   <%= calendar_page %>
   <div class="nontime">
-    <h4><%=link_to event.title, admin_events_path(event) %></h4>
+    <h4><%=link_to event.title, event_path(event) %></h4>
     <p class="data">
       <span class="time"><%= event.start_time %><span class="ampm"><%= event.start_ampm %></span></span> at
       <span><%= link_to event.location, 'http://maps.google.co.uk?q=' + CGI.escape(event.location) %></span>,

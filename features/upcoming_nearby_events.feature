@@ -11,7 +11,6 @@ Feature: Summary of upcoming events
         Given I am on the homepage
         Then I should see an info message saying "Oops, couldn't find any events. Try being less specific about the type of event." within ".events"
 	
-	@tim
     Scenario: Show upcoming events on homepage
 	
 		Events should be in descending order, and past events should not be shown.
