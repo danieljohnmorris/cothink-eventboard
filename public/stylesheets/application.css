@@ -94,6 +94,10 @@ html {
 		padding:0.5em;
 		margin:0.5em 0;
 	}
+	.events-list .week .range {
+		display:block;
+		float:right;
+	}
 .event-calendar-page {
 	display:block;
 	float:right;

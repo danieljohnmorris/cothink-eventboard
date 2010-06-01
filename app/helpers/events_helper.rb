@@ -34,13 +34,12 @@ module EventsHelper
      render(:partial => 'home/calendar_page',:locals => {:day => date.day, :month => date.strftime('%b')})
   end
   def render_week(date)
-    now = Time.new
-    nice_now = nice_datify(date)
     
-    week_diff = weeks_in_future_of(date,now)
+    week_diff = weeks_in_future_of(date,Time.now)
     monday_of_date = monday_of_week_containing(date)
-    week_name = @@week_names[week_diff] || "Week of #{nice_datify(monday_of_date)}"
     
+    week_of = "Week of #{nice_datify(monday_of_date)}"
+    week_name = week_diff >= 0 ? @@week_names[week_diff] || week_of : week_of
     
     range = nice_datify(monday_of_date) + ' - ' + nice_datify(monday_of_date + 6.days)
     

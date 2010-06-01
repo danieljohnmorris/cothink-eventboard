@@ -2,12 +2,7 @@
 <li class="event">
   <%= calendar_page %>
   <div class="nontime">
-    <h4><%=event.title %></h4>
-    <ul class="data">
-      <li><%= event.location %></p>
-      <li><%= truncate_first_sentence(event.description,120,'...') %></p>
-      <li><%= event.organisation.name %></p>
-    </ul>
+    <h4><%=link_to event.title, admin_events_path(@event) %></h4>
   </div>
   <div class="datetime">
     <span class="time"><%= event.start_time %><span class="ampm"><%= event.start_ampm %></span></span>
