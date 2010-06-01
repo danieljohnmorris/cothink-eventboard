@@ -1,0 +1,7 @@
+Feature: Organisations feature
+  In order to find out more about how good an event organiser is, and see all of their events
+  As Carmen
+  I want to be able to look at a profile page for them
+  And filter my search results to only include a certain organiser
+
+  

@@ -23,10 +23,10 @@ Feature: Summary of upcoming events
 		 | biz    | 12-10-2006 19:00:00 | biz land | fsb            |
 		When I am on the homepage
         Then I should see a list of upcoming events like this
-		 | title  | start_date | start_month | start_time | location | organisation   |
-		 | biz    | 12         | Oct         | 6pm        | biz land | fsb            |
-		 | mental | 18         | Oct         | 7pm        | fun land | scientologists |
-		
+		 | title  |  organisation   |
+		 | biz    |  fsb            |
+		 | mental |  scientologists |
+		                                      
 	Scenario: Break up events into weeks
 	  Given there are 30 random events over the next month
 	  When I am on the homepage

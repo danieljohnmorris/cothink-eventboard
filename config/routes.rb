@@ -6,6 +6,9 @@ CothinkEventboard::Application.routes.draw do |map|
     admin.resources :organisations
     admin.resources :events
   end
+  
+  map.resources :organisations, :only => [:index, :show]
+  
   match '/admin/events/ingest' => 'admin/events#ingest'
   
   map.root            :controller => 'home'

@@ -78,15 +78,18 @@ html {
 	padding:0;
 	margin:0;
 }
+	.events-list h4 {
+		margin:0;
+	}
+	.events-list .event .data {
+		margin:0;
+		font-size:.75em;
+	}
 	.events-list .event {
 		list-style-type:none;
 		overflow:auto;
 	}
-		.events-list h4 {
-			margin-top:0;
-		}
 		.events-list .event .time {
-			font-size:.75em;
 		}
 	.events-list .week {
 		background:#D6E2F3;
