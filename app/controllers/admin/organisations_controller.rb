@@ -44,7 +44,7 @@ class Admin::OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.save
-        format.html { redirect_to(@organisation, :notice => 'Organisation was successfully created.') }
+        format.html { redirect_to(admin_organisation_path(@organisation), :notice => 'Organisation was successfully created.') }
         format.xml  { render :xml => @organisation, :status => :created, :location => @organisation }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class Admin::OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.update_attributes(params[:organisation])
-        format.html { redirect_to(@organisation, :notice => 'Organisation was successfully updated.') }
+        format.html { redirect_to(admin_organisation_path(@organisation), :notice => 'Organisation was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
