@@ -5,7 +5,7 @@
     <h4><%=link_to event.title, event_path(event) %></h4>
     <p class="data">
       <span class="time"><%= event.start_time %><span class="ampm"><%= event.start_ampm %></span></span> at
-      <span><%= link_to event.location, 'http://maps.google.co.uk?q=' + CGI.escape(event.location) %></span>,
+      <span><%= event.location %> (<%= link_to "map", 'http://maps.google.co.uk?q=' + CGI.escape(event.location) %>)</span>,
       <span><%= link_to event.organisation.name, organisation_path(event.organisation) %></span>
     </p>
   </div>
