@@ -1,6 +1,6 @@
 Feature: Like an event
   In order to capture events I'm interest in, and broadcast that interest
-  As Carment
+  As Carmen
   I want to be able to 'like' events
 
   Background
