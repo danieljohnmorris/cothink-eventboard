@@ -38,3 +38,7 @@ DELETE REMOVE BRANCH
 CHECKOUT REMOTE BRANCH (NOT MASTER)
     git checkout --track -b name_of_local_branch origin/name_of_remote_branch
     http://github.com/guides/showing-and-tracking-remote-branches
+
+FOR TRACKING DEV BRANCH!!!
+	git checkout --track -b dev origin/dev
+
