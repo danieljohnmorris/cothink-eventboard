@@ -1,11 +1,16 @@
 source 'http://rubygems.org'
 source 'http://gemcutter.org'
 
-gem 'rails', '3.0.0.beta3'
+# gem 'rails', '3.0.0.beta3'
 # gem "pg", :group => :production # for heroku
 
+gem "bundler", "0.9.26"
 gem 'mysql'
 gem 'will_paginate', '3.0.pre'
+
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'rpx_now'
+gem 'devise_rpx_connectable'
 
 gem 'fastercsv' # for csv importing
 
@@ -16,7 +21,7 @@ gem "capistrano"
 gem 'danieljohnmorris-shadow_puppet'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', :git => 'git://github.com/rails/rails.git'
 # gem 'rails', :git => 'git://github.com/tiennou/rails.git'
 
 # Use unicorn as the web server
