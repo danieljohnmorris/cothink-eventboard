@@ -217,7 +217,7 @@ specs:
     version: 0.8.3
 - will_paginate: 
     version: 3.0.pre
-hash: 64ba892ce9d7b716bcb88ad12623403a91c2eae3
+hash: 6abe5018c8287beb24963260f977ea191e847dcb
 sources: 
 - Git: 
     uri: git://github.com/szimek/factory_girl.git
