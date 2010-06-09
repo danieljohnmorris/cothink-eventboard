@@ -1,4 +1,6 @@
 CothinkEventboard::Application.routes.draw do |map|
+  devise_for :people
+
 
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
