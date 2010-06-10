@@ -18,6 +18,14 @@
             <img class="logo" alt="The Business Diary" src="/images/logo1.png">
           </a>
         </h1>
+
+	  	<% unless person_signed_in? %>
+	  		<%= link_to_rpx "Signin using RPX!", person_session_url %>
+		<% else %>
+			<p><strong>User:</strong><br/><%= debug current_person %></p>
+			<p><strong>Session:</strong><br/><%= debug person_session %></p>
+			<%= link_to "Sign out?", destroy_person_session_url %>
+		<% end %>
       </div>
           
       <div id="bd" role="main">
@@ -58,5 +66,6 @@
 
     <%= render :partial => 'layouts/uservoice' %>
     <%= render :partial => 'layouts/google_analytics' %>
+    <%= javascript_include_rpx(person_session_url) %>
   </body>
 </html>
