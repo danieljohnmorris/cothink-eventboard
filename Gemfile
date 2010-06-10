@@ -41,9 +41,14 @@ gem "database_cleaner",               :group => :test
 gem "spork",                          :group => :test
 gem "cucumber-rails",                 :group => :test
 gem "cucumber", "0.7.2",              :group => :test
-gem "rspec",                          :group => :test
-# gem "rspec-rails", "2.0.0.beta.8",    :group => :test
-gem "rspec-rails",                    :group => :test
+
+gem "rspec-rails",        ">= 2.0.0.beta.10", :git => "git://github.com/rspec/rspec-rails.git"
+gem "rspec",              ">= 2.0.0.beta.10", :git => "git://github.com/rspec/rspec.git"
+gem "rspec-core",         ">= 2.0.0.beta.10", :git => "git://github.com/rspec/rspec-core.git"
+gem "rspec-expectations", ">= 2.0.0.beta.10", :git => "git://github.com/rspec/rspec-expectations.git"
+gem "rspec-mocks",        ">= 2.0.0.beta.10", :git => "git://github.com/rspec/rspec-mocks.git"
+
+
 # gem "webrat",                         :group => :test
 gem "selenium-client",                :group => :test # needed with capybara?
 gem "capybara",                       :group => :test  # drop in replacement for webrat
