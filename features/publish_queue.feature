@@ -20,7 +20,7 @@ Feature: Publish Queue
         And the published state should be "Draft"
         And I should see the event on the public site
     
-    Scenario: If editing and not changing publish state, leave it well alone!    
+    Scenario Outline: If editing and not changing publish state, leave it well alone!    
         Given I login as an Admin
         When I edit an event
         And I change the published setting
@@ -32,7 +32,7 @@ Feature: Publish Queue
             | no               | yes             |
             | yes              | no              |
 
-    Scenario: If editing, and change publish state, save updated state
+    Scenario Outline: If editing, and change publish state, save updated state
         Given I login as an Admin
         When I edit an event
         And I leave the published setting alone
