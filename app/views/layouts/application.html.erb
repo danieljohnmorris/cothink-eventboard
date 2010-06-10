@@ -20,11 +20,9 @@
         </h1>
 
 	  	<% unless person_signed_in? %>
-	  		<%= link_to_rpx "Signin using RPX!", person_session_url %>
+	  		<p><%= link_to_rpx "Signin using RPX!", person_session_url %></p>
 		<% else %>
-			<p><strong>User:</strong><br/><%= debug current_person %></p>
-			<p><strong>Session:</strong><br/><%= debug person_session %></p>
-			<%= link_to "Sign out?", destroy_person_session_url %>
+			<p>Signed in as: <strong><%= current_person.email %></strong>, <%= link_to "Sign out?", destroy_person_session_url %></p>
 		<% end %>
       </div>
           
