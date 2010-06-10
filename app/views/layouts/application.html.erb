@@ -19,11 +19,7 @@
           </a>
         </h1>
 
-	  	<% unless person_signed_in? %>
-	  		<p><%= link_to_rpx "Signin using RPX!", person_session_url %></p>
-		<% else %>
-			<p>Signed in as: <strong><%= current_person.email %></strong>, <%= link_to "Sign out?", destroy_person_session_url %></p>
-		<% end %>
+		<%= render :partial => "layouts/auth_person" %>
       </div>
           
       <div id="bd" role="main">
