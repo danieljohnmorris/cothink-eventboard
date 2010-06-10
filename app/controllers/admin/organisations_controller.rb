@@ -1,4 +1,6 @@
 class Admin::OrganisationsController < ApplicationController
+  before_filter :authenticate_admin!
+
   # GET /admin_organisations
   # GET /admin_organisations.xml
   def index

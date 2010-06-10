@@ -1,4 +1,6 @@
 class Admin::EventsController < ApplicationController
+  before_filter :authenticate_admin!
+
   # GET /admin_events
   # GET /admin_events.xml
   def index
