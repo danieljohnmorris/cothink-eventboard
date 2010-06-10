@@ -227,7 +227,7 @@ sources:
 - Git: 
     uri: git://github.com/rails/rails.git
     git: git://github.com/rails/rails.git
-    ref: 0265c708b9696c3943518ad5f3dabdc22c5eba11
+    ref: 983815632cc1d316c7c803a47be28f1abe6698fb
 - Git: 
     uri: git://github.com/plataformatec/devise.git
     git: git://github.com/plataformatec/devise.git
