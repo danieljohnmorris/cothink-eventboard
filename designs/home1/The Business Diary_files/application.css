@@ -1,0 +1,124 @@
+textarea {
+    height: 100px;
+    width: 400px;
+}
+
+/* Floating bar
+************************/
+
+/* catfish and 'position:fixed' emulation */
+/*#catfish {
+    position:fixed;
+    bottom:0;
+    background-color: red;
+    padding:0;
+    height: 79px;
+    cursor: pointer;
+    margin: 0; 
+    width:100%;
+}
+    #catfish h3{
+        overflow:hidden;
+        background: transparent url(images/catfish.gif) no-repeat left bottom;
+        width:279px;
+        height:79px;
+        float:left
+    }
+
+    #catfish ul{
+        margin: 30px 16px 0pt 0pt; 
+        padding: 0pt; 
+        float: right; 
+        font-size: x-small; 
+        list-style-type: none;
+    }
+
+    #catfish ul li a{
+        color:#FFCC00;
+    }
+
+    #catfish p#catch{
+        margin: 40px 0pt 0pt 292px; 
+        color: #fff
+    }
+
+html {
+    padding:0 0 58px 0;
+}*/
+    
+/* Flash messages
+************************/
+
+#messages .error,
+#messages .success,
+#messages .info {
+    border: 1px solid;
+    padding: 10px;
+}
+
+#messages .error {
+    border-color: red;
+    color: red;
+}
+
+#messages .success {
+    border-color: green;
+    color: green;
+}
+
+#messages .info {
+    border-color: grey;
+    color: grey;
+}
+
+/* Event listing
+************************/
+
+.events-list {
+	padding:0;
+	margin:0;
+}
+	.events-list h4 {
+		margin:0;
+	}
+	.events-list .event .data {
+		margin:0;
+		font-size:.75em;
+	}
+	.events-list .event {
+		list-style-type:none;
+		overflow:auto;
+	}
+		.events-list .event .time {
+		}
+	.events-list .week {
+		background:#D6E2F3;
+		font-size:1.5em;
+		padding:0.5em;
+		margin:0.5em 0;
+	}
+	.events-list .week .range {
+		display:block;
+		float:right;
+	}
+.event-calendar-page {
+	display:block;
+	float:right;
+	width:40px;
+	height:40px;
+	border:1px solid #ddd;
+}
+	.event-calendar-page .month,.event-calendar-page .day {
+		display:block;
+		text-align:center;
+	}
+	.event-calendar-page .month {
+		height:40%;
+		background:#2D4DCE;
+		color:#fff;
+		font-size:0.75em;
+	}
+	.event-calendar-page .day {
+		height:35%;
+		margin-top:5%;
+	}
