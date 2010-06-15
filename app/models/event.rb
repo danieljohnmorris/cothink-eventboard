@@ -1,8 +1,37 @@
 require 'fastercsv'
 class Event < ActiveRecord::Base
   validates_presence_of :title, :start_date, :location # minimum useful fields
-  
   belongs_to :organisation
+  
+  ### publish pseudo state machine
+  
+  attr_protected :publish_state
+  DRAFT_STATE = 0
+  PUBLISHED_STATE = 1
+    
+  def publish
+    return true if self.publish_state == PUBLISHED_STATE
+
+    self.publish_state = PUBLISHED_STATE
+    return self.save! ? true : false
+  end
+
+  def hide
+    return true if self.publish_state == DRAFT_STATE
+    
+    self.publish_state = DRAFT_STATE
+    return self.save! ? true : false
+  end
+
+  def published?
+    return self.publish_state == PUBLISHED_STATE ? true : false
+  end
+
+  def draft?
+    return self.publish_state == DRAFT_STATE ? true : false
+  end
+  
+  ### tim stuffs
   
   def _formatted_date(date,piece)
     date = self.send(date)

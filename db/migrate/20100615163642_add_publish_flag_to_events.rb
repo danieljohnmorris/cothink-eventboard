@@ -1,7 +1,7 @@
 class AddPublishFlagToEvents < ActiveRecord::Migration
   def self.up
     change_table "events" do |t|
-      t.string :publish_state
+      t.integer :publish_state, :default => 0
     end
   end
 
