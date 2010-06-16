@@ -1,2 +1,2 @@
-$("#pubstate-<%= @event.id %>").html("HIDDEN");
+$("#pubstate-<%= @event.id %>").html('<%=h render :partial => "link_publish", :locals => { :event => @event } %>');
 $("#pubstate-<%= @event.id %>").parent().highlight();

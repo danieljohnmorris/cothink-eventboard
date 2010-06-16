@@ -32,9 +32,9 @@ $(function() {
   <tr>
 	<td id="pubstate-<%= event.id %>">
 		<% if event.published? %>
-			<%= link_to 'hide', admin_event_hide_path(event), :class => "hide", :remote => true %>
+			<%= render :partial => 'admin/events/link_hide', :locals => { :event => event } %>
 		<% else %>
-			<%= link_to 'publish', admin_event_publish_path(event), :class => "publish", :remote => true %>
+			<%= render :partial => 'admin/events/link_publish', :locals => { :event => event } %>
 		<% end %>
   	</td>
     <td><%= link_to 'Edit', edit_admin_event_path(event), :class => "edit" %></td>
