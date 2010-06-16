@@ -5,9 +5,11 @@ CothinkEventboard::Application.routes.draw do |map|
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
     admin.resources :organisations
-    admin.resources :events
-  end
+    admin.resources :events 
+ end
   match '/admin/events/ingest' => 'admin/events#ingest'
+  match '/admin/events/hide(/:id(.:format))' => 'admin/events#hide', :as => :admin_event_hide
+  match '/admin/events/publish(/:id(.:format))' => 'admin/events#publish', :as => :admin_event_publish
   
   map.resources :organisations, :only => [:index, :show]
   map.resources :events, :only => [:index, :show]  

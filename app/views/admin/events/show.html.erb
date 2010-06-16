@@ -1,6 +1,14 @@
-<%= render :partial => "admin/shared/header" %>
+<%= render :partial => "admin/events/header" %>
 
 <p id="notice"><%= notice %></p>
+
+<p>
+  <% if @event.published? %>
+	<div class="published-show">published</div>
+  <% else %>
+	<div class="draft-show">draft</div>
+  <% end %>
+</p>
 
 <p>
   <b>Title:</b>

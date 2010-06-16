@@ -5,6 +5,10 @@ module EventsHelper
   
   @@week_names = ['This Week','Next Week','Week After Next']
   
+  def map_link(address)
+    link_to "map", 'http://maps.google.co.uk?q=' + CGI.escape(address)
+  end
+  
   # render events, and week and days for all distinct dates
   def render_events(events)
     output = ''

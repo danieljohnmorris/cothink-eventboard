@@ -1,3 +1,38 @@
+/* ADMIN STYLES */
+
+a.hide:link,
+a.hide:visited {
+	color: red;
+}
+
+a.publish:link,
+a.publish:visited {
+	color: green;
+}
+
+a.edit:link,
+a.edit:visited {
+	color: orange;
+}
+
+.published-show,
+.draft-show {
+	width: 100%;
+	font-size: 1.5em;
+	background-color: #eee;
+	border-bottom: 2px solid;
+}
+.published-show {
+	color: green;
+	border-color: green;
+}
+.draft-show {
+	color: red;
+	border-color: red;
+}
+
+/* SCAFFOLD STYLES */
+
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {

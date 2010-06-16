@@ -1,6 +1,7 @@
 class Admin::EventsController < ApplicationController
   before_filter :authenticate_admin!
-
+  respond_to :html, :xml, :js
+  
   # GET /admin_events
   # GET /admin_events.xml
   def index
@@ -59,9 +60,11 @@ class Admin::EventsController < ApplicationController
   # PUT /admin/events/1.xml
   def update
     @event = Event.find(params[:id])
+    params[:event][:publish_state] = params[:event][:publish_state].to_i
 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes!(params[:event])
+        raise @event.inspect
         format.html { redirect_to(admin_event_path(@event), :notice => 'Event was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -110,4 +113,37 @@ class Admin::EventsController < ApplicationController
       
     redirect_to admin_path
   end
+
+  # GET /admin/events/hide
+  # GET /admin/events/hide.xml
+  def hide
+    set_publish_state(Event::DRAFT_STATE)
+  end
+
+  # GET /admin/events/publish
+  # GET /admin/events/publish.xml
+  def publish
+    set_publish_state(Event::PUBLISHED_STATE)
+  end
+  
+  protected
+  
+    # GET /admin/events/[hide|publish]
+    # GET /admin/events/[hide|publish].xml
+    def set_publish_state(pub_state)
+      @event = Event.find(params[:id])
+
+      respond_to do |format|
+        if @event.update_attribute("publish_state", pub_state)
+          format.html { redirect_to(admin_event_path(@event), :notice => 'Event was successfully updated.') }
+          format.js
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.js
+          format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
+        end
+      end
+    end
+  
 end

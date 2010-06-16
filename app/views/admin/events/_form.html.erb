@@ -1,8 +1,7 @@
-<%= form_for(@event, :url => admin_events_path(@event)) do |f| %>
+<%= form_for(@event, :url => admin_event_path(@event)) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
       <ul>
       <% @event.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -14,6 +13,10 @@
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :publish_state %><br />
+    <%= f.select(:publish_state, {"Draft" => 0, "Published" => 1}) %>
   </div>
   <div class="field">
     <%= f.label :description %><br />

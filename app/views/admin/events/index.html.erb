@@ -1,11 +1,21 @@
-<%= render :partial => "admin/shared/header" %>
+<%= render :partial => "admin/events/header" %>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+	$('a[data-remote=true]').live('click', function() {
+	  return request({ url : this.href });
+	});
+});
+</script>
 
 <h1>Listing events</h1>
 
 <table>
   <tr>
+    <th>Publish state</th>
+    <th></th>
     <th>Title</th>
-    <th>Description</th>
+    <!--<th>Description</th>-->
     <th>Location</th>
     <th>Start time</th>
     <th>Organisation</th>
@@ -16,25 +26,67 @@
     <th>People</th>
     <th>Notes</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.title %></td>
-    <td><%= event.description %></td>
-    <td><%= event.location %></td>
+	<td id="pubstate-<%= event.id %>">
+		<% if event.published? %>
+			<%= link_to 'hide', admin_event_hide_path(event), :class => "hide", :remote => true %>
+		<% else %>
+			<%= link_to 'publish', admin_event_publish_path(event), :class => "publish", :remote => true %>
+		<% end %>
+  	</td>
+    <td><%= link_to 'Edit', edit_admin_event_path(event), :class => "edit" %></td>
+	<td><%= link_to event.title, admin_event_path(event) %></td>
+    <!--<td><%= event.description %></td>-->
+    <td><%= event.location %> (<%= map_link(event.location) %>)</td>
     <td><%= event.start_time %></td>
-    <td><%= event.organisation %></td>
-    <td><%= event.url %></td>
-    <td><%= event.source %></td>
-    <td><%= event.telephone %></td>
-    <td><%= event.email %></td>
-    <td><%= event.people %></td>
-    <td><%= event.notes %></td>
-    <td><%= link_to 'Show', admin_event_path(event) %></td>
-    <td><%= link_to 'Edit', edit_admin_event_path(event) %></td>
+    <td>
+		<% if event.organisation %>
+			<%= link_to event.organisation.name, admin_organisation_path(event.organisation) %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>
+    <td>
+		<% if event.url && event.url.length > 1 %>
+			<%= link_to "#{event.url[0..20]}...", event.url %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>
+    <td>
+		<% if event.source && event.source.length > 1 %>
+			<%= event.source %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>
+    <td>
+		<% if event.telephone && event.telephone.length > 1 %>
+			<%= event.telephone %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>
+    <td>
+		<% if event.email && event.email.length > 1 %>
+			<%= link_to event.email, "mailto:#{event.email}" %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>
+    <td>
+		<% if event.people && event.people.length > 1 %>
+			<%= event.people %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>
+    <td>
+<%= event.notes %>
+	</td>
     <td><%= link_to 'Destroy', admin_event_path(event), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
