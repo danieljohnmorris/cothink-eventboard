@@ -1,9 +1,8 @@
 <%= render :partial => "admin/shared/header" %>
 
-<h1>Admin::Index#index</h1>
-<p>Hello! Welcome to the admin section</p>
+<p>Welcome to the admin section :)</p>
 
-<ul>
+<ul class="big">
     <li><%= link_to "Events", admin_events_path %></li>
     <li><%= link_to "Organisations", admin_organisations_path %></li>
 </ul>
@@ -11,7 +10,14 @@
 <div id="bulk-add-events">
     <h2>Bulk add events</h2>
     <%= form_for :csv, :url => "/admin/events/ingest", :html => { :multipart => true, :method => :post } do |f| -%>
-        <div><%= f.file_field "file" %> </div>
+  		<div class="field">
+    		<%= f.label :file %><br />
+			<%= f.file_field :file %> 
+		</div>
+	  	<div class="field">
+	    	<%= f.label :publish_state %><br />
+	    	<%= f.select(:publish_state, event_publish_states) %>
+	  	</div>
         <div><%= f.submit 'Upload CSV' %></div>
     <% end -%>
 </div>

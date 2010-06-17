@@ -5,7 +5,7 @@ class Admin::EventsController < ApplicationController
   # GET /admin_events
   # GET /admin_events.xml
   def index
-    @events = Event.all
+    @events = Event.all(:order => "start_date desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -100,6 +100,7 @@ class Admin::EventsController < ApplicationController
         e.location = row[3]
         e.source = row[4]
         e.url = row[5]
+        e.publish_state = params[:csv][:publish_state]
         e.organisation = Organisation.find_or_create_by_name(row[6])
         saved_events << e if e.save
     end

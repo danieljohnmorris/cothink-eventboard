@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <%= f.label :publish_state %><br />
-    <%= f.select(:publish_state, {"Draft" => 0, "Published" => 1}) %>
+    <%= f.select(:publish_state, event_publish_states) %>
   </div>
   <div class="field">
     <%= f.label :description %><br />

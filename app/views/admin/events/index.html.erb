@@ -1,11 +1,6 @@
 <%= render :partial => "admin/events/header" %>
 
 <script type="text/javascript" charset="utf-8">
-$(function() {
-	$('a[data-remote=true]').live('click', function() {
-	  return request({ url : this.href });
-	});
-});
 </script>
 
 <h1>Listing events</h1>
@@ -21,10 +16,10 @@ $(function() {
     <th>Organisation</th>
     <th>Url</th>
     <th>Source</th>
-    <th>Telephone</th>
+    <!--<th>Telephone</th>
     <th>Email</th>
     <th>People</th>
-    <th>Notes</th>
+    <th>Notes</th>-->
     <th></th>
   </tr>
 
@@ -63,7 +58,7 @@ $(function() {
 			N/A
 		<% end %>
 	</td>
-    <td>
+    <!--<td>
 		<% if event.telephone && event.telephone.length > 1 %>
 			<%= event.telephone %>
 		<% else %>
@@ -85,13 +80,17 @@ $(function() {
 		<% end %>
 	</td>
     <td>
-<%= event.notes %>
-	</td>
-    <td><%= link_to 'Destroy', admin_event_path(event), :confirm => 'Are you sure?', :method => :delete %></td>
+		<% if event.notes && event.notes.length > 1 %>
+			<%= event.notes %>
+		<% else %>
+			N/A
+		<% end %>
+	</td>-->
+    <td><%= link_to 'Destroy', admin_event_path(event), :html => { :confirm => 'Are you sure?', :method => :delete }, :class => "delete" %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Event', new_admin_event_path %>
+<p class="option-bar">
+	<%= link_to 'New Event', new_admin_event_path, :class => "new" %>
+</p>

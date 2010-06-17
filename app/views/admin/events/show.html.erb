@@ -2,12 +2,12 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <% if @event.published? %>
-	<div class="published-show">published</div>
-  <% else %>
-	<div class="draft-show">draft</div>
-  <% end %>
+<p id="pubstate-<%= @event.id %>" class="option-bar">
+	<% if @event.published? %>
+		<%= render :partial => 'admin/events/link_hide', :locals => { :event => @event } %>
+	<% else %>
+		<%= render :partial => 'admin/events/link_publish', :locals => { :event => @event } %>
+	<% end %>
 </p>
 
 <p>
@@ -65,6 +65,8 @@
   <%= @event.notes %>
 </p>
 
-
-<%= link_to 'Edit', edit_admin_event_path(@event) %> |
-<%= link_to 'Back', admin_events_path %>
+<p class="option-bar">
+	<%= link_to 'Edit', edit_admin_event_path(@event), :class => "edit" %> |
+    <%= link_to 'Destroy', edit_admin_event_path(@event), :confirm => 'Are you sure?', :html => { :method => :delete }, :class => "delete" %> | 
+	<%= link_to 'Back', admin_events_path %>
+</p>

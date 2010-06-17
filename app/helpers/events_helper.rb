@@ -9,6 +9,10 @@ module EventsHelper
     link_to "map", 'http://maps.google.co.uk?q=' + CGI.escape(address)
   end
   
+  def event_publish_states
+    {"Draft" => 0, "Published" => 1}
+  end
+  
   # render events, and week and days for all distinct dates
   def render_events(events)
     output = ''
