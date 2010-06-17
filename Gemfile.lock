@@ -24,6 +24,10 @@ dependencies:
     group: 
     - :default
     version: ">= 2.0.0.beta.10"
+  acts-as-taggable-on: 
+    group: 
+    - :default
+    version: ">= 0"
   rspec-expectations: 
     group: 
     - :default
@@ -48,14 +52,14 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  arel: 
-    group: 
-    - :default
-    version: ">= 0"
   will_paginate: 
     group: 
     - :default
     version: = 3.0.pre
+  arel: 
+    group: 
+    - :default
+    version: ">= 0"
   devise: 
     group: 
     - :default
@@ -136,7 +140,7 @@ specs:
 - rack: 
     version: 1.1.0
 - rack-mount: 
-    version: 0.6.3
+    version: 0.6.4
 - rack-test: 
     version: 0.5.4
 - tzinfo: 
@@ -151,7 +155,7 @@ specs:
 - treetop: 
     version: 1.4.8
 - mail: 
-    version: 2.2.3
+    version: 2.2.4
 - actionmailer: 
     version: 3.0.0.beta4
     source: 7
@@ -163,6 +167,10 @@ specs:
 - activeresource: 
     version: 3.0.0.beta4
     source: 7
+- acts-as-taggable-on: 
+    version: 2.0.6
+- bcrypt-ruby: 
+    version: 2.1.2
 - bundler: 
     version: 0.9.26
 - highline: 
@@ -186,7 +194,7 @@ specs:
 - json_pure: 
     version: 1.4.3
 - selenium-webdriver: 
-    version: 0.0.21
+    version: 0.0.24
 - capybara: 
     version: 0.3.8
 - configuration: 
@@ -196,7 +204,7 @@ specs:
 - trollop: 
     version: 1.16.2
 - gherkin: 
-    version: 1.0.30
+    version: 2.0.2
 - term-ansicolor: 
     version: 1.0.5
 - cucumber: 
@@ -242,29 +250,29 @@ specs:
     version: 3.0.0.beta4
     source: 7
 - rspec-core: 
-    version: 2.0.0.beta.11
+    version: 2.0.0.beta.12
     source: 3
 - rspec-expectations: 
-    version: 2.0.0.beta.11
+    version: 2.0.0.beta.12
     source: 2
 - rspec-mocks: 
-    version: 2.0.0.beta.11
+    version: 2.0.0.beta.12
     source: 1
 - rspec: 
-    version: 2.0.0.beta.11
+    version: 2.0.0.beta.12
     source: 4
 - webrat: 
     version: 0.7.1
 - rspec-rails: 
-    version: 2.0.0.beta.11
+    version: 2.0.0.beta.12
     source: 5
 - selenium-client: 
     version: 1.2.18
 - spork: 
-    version: 0.8.3
+    version: 0.8.4
 - will_paginate: 
     version: 3.0.pre
-hash: e390fc582a71182a80bfa35402981c4a05e85fb5
+hash: 49467c0aa7b3db03c121d3f2400ca2e3fd82965c
 sources: 
 - Git: 
     uri: git://github.com/szimek/factory_girl.git
@@ -274,31 +282,31 @@ sources:
 - Git: 
     uri: git://github.com/rspec/rspec-mocks.git
     git: git://github.com/rspec/rspec-mocks.git
-    ref: 682394d5b368b092728eb52d31e4d2ded9e295e1
+    ref: 0368e2fcedadcd3e362c350f09103968ad4728d5
 - Git: 
     uri: git://github.com/rspec/rspec-expectations.git
     git: git://github.com/rspec/rspec-expectations.git
-    ref: 23f41a6e4b575bcebabc3cc2fae1843c9e6ee76b
+    ref: 0cdd882c1f43fcf8b25637705704895818713933
 - Git: 
     uri: git://github.com/rspec/rspec-core.git
     git: git://github.com/rspec/rspec-core.git
-    ref: 2b6ba51b3e3de2795d70dac2e405da319c475b8c
+    ref: 42b6846477d89cfd0a2e744abaa52778920abb12
 - Git: 
     uri: git://github.com/rspec/rspec.git
     git: git://github.com/rspec/rspec.git
-    ref: cc9b4f6c17dbfa9174f0befcdb2bd78ffa2d4c89
+    ref: ad9f6ea17451d683e8abb37e6524fcbf989d90ba
 - Git: 
     uri: git://github.com/rspec/rspec-rails.git
     git: git://github.com/rspec/rspec-rails.git
-    ref: 43dcc4dba6cba429c7568b3a1b42229797d9f694
+    ref: 759b953cebede7074f031a90d8137365a7cadc00
 - Git: 
     uri: git://github.com/plataformatec/devise.git
     git: git://github.com/plataformatec/devise.git
-    ref: 5f2a19d7844abf341ab355bfd7de21ae861c1aae
+    ref: ac0105d15f5bcc78f7a4b496eb52b0a5e9a27100
 - Git: 
     uri: git://github.com/rails/rails.git
     git: git://github.com/rails/rails.git
-    ref: 85cc1fa657f441417f36998a32a6a158c2697aad
+    ref: 69bc8b26a9be246acc06eaab09063eb97f76aa00
 - Rubygems: 
     uri: http://rubygems.org
 - Rubygems: 

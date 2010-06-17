@@ -18,6 +18,7 @@ gem "mail"
 gem "bundler", "0.9.26"
 gem 'mysql'
 gem 'will_paginate', '3.0.pre'
+gem 'acts-as-taggable-on'
 
 # auth
 gem "rpx_now"
