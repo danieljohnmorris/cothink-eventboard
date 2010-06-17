@@ -18,8 +18,7 @@ Feature: Bulk ingest data into application
             | csv_path                   | message                                     |
             | files/events_7_rows.csv    | CSV import successful, 7 events ingested    |
             # | files/events_1318_rows.csv | CSV import successful, 1318 events ingested |
-
-@dan        
+        
     Scenario Outline: Upload blank CSV in admin
         Given I am on the admin overview
         When I upload a CSV at "<csv_path>"

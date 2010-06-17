@@ -2,6 +2,7 @@ require 'fastercsv'
 class Event < ActiveRecord::Base
   validates_presence_of :title, :start_date, :location # minimum useful fields
   belongs_to :organisation
+  acts_as_taggable_on :star
   
   ### publish pseudo state machine
   
