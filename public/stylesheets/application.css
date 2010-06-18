@@ -1,32 +1,34 @@
-/* Stars
+/* Misc
 ************************/
 
-a.starred {
-	text-decoration: none;
-	color: #aaa;
-}
-	a.starred:hover {
-		color: #E8B228;
-	}
-	
 img {
 	border: none;
 }
-
-img.star {
-	position: relative;
-	top: 3px;
-	width: 18px;
-}
-                                                                                                              
-/* Misc
-************************/
 
 textarea {
     height: 100px;
     width: 400px;
 }
 
+/* Stars
+************************/
+
+.event .star {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	text-decoration: none;
+	color: #aaa;
+}
+	.event .star:hover {
+		color: #E8B228;
+	}
+	
+.star img {
+	position: relative;
+	top: 3px;
+	width: 18px;
+}
+                                                                                                              
 /* Floating bar
 ************************/
 
@@ -146,3 +148,29 @@ html {
 		height:35%;
 		margin-top:5%;
 	}
+
+/* Event
+************************/
+
+.event h4 {
+	font-size: 1.3em;
+	font-weight: normal;
+}
+
+.event .data {
+	display: block;
+	padding-left: 55px;
+	color: #777;
+}
+	.event .data a {
+		color: #555;
+	}
+	
+/* Pagination
+************************/
+
+.pagination {
+	border-top: 1px solid #aaa;
+	margin-top: 25px;
+	padding: 10px;
+}
