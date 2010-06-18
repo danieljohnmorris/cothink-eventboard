@@ -4,12 +4,16 @@
     <title>
       The Business Diary
     </title>
-    <%= stylesheet_link_tag 'application', 'yui/yui' %>
+	<% 
+	stylesheets = ['yui/yui', 'application']
+	stylesheets << 'admin' if admin_signed_in?
+    %>
+	<%= stylesheet_link_tag stylesheets %>
 	<%= javascript_include_tag 'jquery-1.4.1-min', 'rails', 'application' %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <div id="doc3" class="yui-t7">
+    <div id="doc" class="yui-t7">
     
       <div id="masthead" role="banner">
         <h1>
