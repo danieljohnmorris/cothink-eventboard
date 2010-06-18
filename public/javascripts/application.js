@@ -2,9 +2,9 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(function() {
-	$("a.starred").hover(function() {
-		$("img.star", this).attr("src", "/images/star.png");
+	$("a.star").hover(function() {
+		$("img", this).attr("src", "/images/star.png");
 	}, function() {
-		$("img.star", this).attr("src","/images/star_dimmed.gif");
+		$("img", this).attr("src","/images/star_dim.png");
 	});
 });
