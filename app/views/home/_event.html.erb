@@ -3,7 +3,10 @@
   <%= calendar_page %>
   <div class="nontime">
     <h4>
-		<a class="starred" href="#star"><img class="star" src="/images/star_dim.gif" alt-"star" /> 34</a>
+		<a class="star" href="#star">
+			<img src="/images/star_dim.gif" alt="star" />
+			<span class="starred-count">34</span>
+		</a>
 		<%=link_to event.title, event_path(event) %>
 	</h4>
     <p class="data">
@@ -11,7 +14,7 @@
       <span><%= event.location %> (<%= map_link(event.location) %>)</span>,
 
       <% if event.organisation %>
-		<span><%= link_to event.organisation.name, organisation_path(event.organisation) %></span>
+		<span>organised by <%= link_to event.organisation.name, organisation_path(event.organisation) %></span>
 	  <% end %>
     </p>
   </div>
