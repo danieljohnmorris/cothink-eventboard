@@ -7,12 +7,12 @@
 
 <table>
   <tr>
-    <th>Publish state</th>
+    <th>Publish State</th>
     <th></th>
     <th>Title</th>
     <!--<th>Description</th>-->
     <th>Location</th>
-    <th>Start time</th>
+    <th>Start Date</th>
     <th>Organisation</th>
     <th>Url</th>
     <th>Source</th>
@@ -36,7 +36,7 @@
 	<td><%= link_to event.title, admin_event_path(event) %></td>
     <!--<td><%= event.description %></td>-->
     <td><%= event.location %> (<%= map_link(event.location) %>)</td>
-    <td><%= event.start_time %></td>
+    <td><%= event.start_date %></td>
     <td>
 		<% if event.organisation %>
 			<%= link_to event.organisation.name, admin_organisation_path(event.organisation) %>
