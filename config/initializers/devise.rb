@@ -5,6 +5,7 @@ Devise.setup do |config|
   config.mailer_sender = "dan@thebusinessdiary.co.uk"
 
   config.rpx_application_name = "the-business-diary" # The name of your RPX application (this is the name, NOT the API key!)
+  config.encryptor = :sha1
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default), :mongoid
