@@ -14,6 +14,9 @@ module NavigationHelpers
     when /the admin overview/
       '/admin/'
 
+    when /event admin list/
+      '/admin/events'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
