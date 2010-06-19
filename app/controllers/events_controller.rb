@@ -1,4 +1,9 @@
 class EventsController < ApplicationController
+  
+  def index
+    redirect_to root_path
+  end
+  
   # GET /events/1
   # GET /events/1.xml
   def show
