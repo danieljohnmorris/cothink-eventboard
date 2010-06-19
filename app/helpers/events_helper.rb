@@ -28,7 +28,7 @@ module EventsHelper
          calendar_page = render_calendar_page(event.start_date)
       end
       
-      output += render(:partial => 'home/event',:locals => {:event=>event, :week=>week, :calendar_page=>calendar_page})
+      output += render(:partial => 'events/event',:locals => {:event=>event, :week=>week, :calendar_page=>calendar_page})
       
       last_date = event.start_date
       

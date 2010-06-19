@@ -1,16 +1,18 @@
 <%= week %>
-<li class="event" id="event-id-<%=CGI.escape(event.title)%>">
-  <%= calendar_page %>
+<li class="event" id="event-<%= event.id %>">
   <div class="nontime">
     <h4>
-		<a class="star" href="#star">
-			<img src="/images/star_dim.gif" alt="star" />
-			<span class="starred-count">34</span>
-		</a>
+		<span class="star">
+		<% if person_signed_in? and event.starred?(current_person) %>
+			<%= render :partial => 'events/link_unstar', :locals => { :event => event } %>
+		<% else %>
+			<%= render :partial => 'events/link_star', :locals => { :event => event } %>
+		<% end %>
+		</span>
+
 		<%=link_to event.title, event_path(event) %>
 	</h4>
     <p class="data">
-      <!-- <span class="time"><%= event.start_time %><span class="ampm"><%= event.start_ampm %></span></span> at -->
       <span><%= event.location %> (<%= map_link(event.location) %>)</span>,
 
       <% if event.organisation %>

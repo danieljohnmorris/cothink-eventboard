@@ -13,13 +13,13 @@ textarea {
 /* Stars
 ************************/
 
-.event .star {
+.event .star a {
 	display: inline-block;
 	margin: 0 10px 0 0;
 	text-decoration: none;
 	color: #aaa;
 }
-	.event .star:hover {
+	.event .star a:hover {
 		color: #E8B228;
 	}
 	
@@ -28,6 +28,13 @@ textarea {
 	top: 3px;
 	width: 18px;
 }
+
+.event .star a.starred {
+	color: #FF8585;
+}
+	.event .star a .starred:hover {
+		color: #FF3737;
+	}
                                                                                                               
 /* Floating bar
 ************************/
@@ -152,19 +159,21 @@ html {
 /* Event
 ************************/
 
-.event h4 {
-	font-size: 1.3em;
-	font-weight: normal;
+.event {
+	margin: 0 0 6px 0;
 }
-
-.event .data {
-	display: block;
-	padding-left: 55px;
-	color: #777;
-}
-	.event .data a {
-		color: #555;
+	.event h4 {
+		font-size: 1.3em;
+		font-weight: normal;
 	}
+	.event .data {
+		display: block;
+		padding-left: 55px;
+		color: #777;
+	}
+		.event .data a {
+			color: #555;
+		}
 	
 /* Pagination
 ************************/

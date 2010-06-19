@@ -2,7 +2,35 @@ require 'fastercsv'
 class Event < ActiveRecord::Base
   validates_presence_of :title, :start_date, :location # minimum useful fields
   belongs_to :organisation
-  acts_as_taggable_on :star
+  acts_as_taggable_on :saves
+  
+  ### starred stuff
+  
+  def starred?(user)
+    if self.saves_from(user).length > 0
+      starred = true
+    else
+      starred = false
+    end
+            
+    return starred
+  end
+  
+  def self::starred(user)
+    user.owned_taggings(:context => "saves", :tag => "star").collect { |t| t.taggable }
+  end
+
+  def starred
+    taggings(:context => "saves", :tag => "star")
+  end
+
+  def star(user)
+    user.tag(self, :with => "star", :on => :saves)
+  end
+
+  def unstar(user)
+    user.tag(self, :with => "", :on => :saves)
+  end
   
   ### publish pseudo state machine
   
@@ -39,6 +67,8 @@ class Event < ActiveRecord::Base
   def draft?
     return self.publish_state == DRAFT_STATE ? true : false
   end
+  
+  
   
   ### tim stuffs
   

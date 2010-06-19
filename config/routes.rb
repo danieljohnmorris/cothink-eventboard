@@ -1,18 +1,28 @@
 CothinkEventboard::Application.routes.draw do |map|
-  devise_for :people
   devise_for :admins
+  devise_for :people
   
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
     admin.resources :organisations
     admin.resources :events 
- end
+  end
+  
   match '/admin/events/ingest' => 'admin/events#ingest'
   match '/admin/events/hide(/:id(.:format))' => 'admin/events#hide', :as => :admin_event_hide
   match '/admin/events/publish(/:id(.:format))' => 'admin/events#publish', :as => :admin_event_publish
   
-  map.resources :organisations, :only => [:index, :show]
-  map.resources :events, :only => [:index, :show]  
+  resources :organisations, :only => [:index, :show]
+  resources :events, :only => [:index, :show]  do
+    member do
+      get :star
+      get :unstar
+    end
+
+    collection do
+      get :starred
+    end
+  end
   
   map.root            :controller => 'home'
   map.about '/about', :controller => 'about'

@@ -1,5 +1,7 @@
 <% unless person_signed_in? %>
 	<p><%= link_to_rpx "Signin using RPX!", person_session_url %></p>
 <% else %>
-	<p>Signed in as: <strong><%= current_person.email %></strong>, <%= link_to "Sign out?", destroy_person_session_url %></p>
+	<p>Signed in as: <strong><%= current_person.email %></strong> - 
+	<%= link_to "View your starred events", starred_events_path %> or 
+	<%= link_to "Sign out?", destroy_person_session_url %></p>
 <% end %>

@@ -146,5 +146,4 @@ class Admin::EventsController < ApplicationController
         end
       end
     end
-  
 end

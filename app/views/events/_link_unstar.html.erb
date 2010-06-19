@@ -1,0 +1,1 @@
+<%= link_to raw('<img src="/images/starred_dim.gif" alt="star" /> <span class="starred-count">' + event.starred.length.to_s + '</span>'), unstar_event_path(event), :class => "starred", :title => "Unstar this event", :remote => true %>
