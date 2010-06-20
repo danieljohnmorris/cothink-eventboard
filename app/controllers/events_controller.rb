@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_person!, :only => [:starred, :star, :unsta]
   respond_to :html, :xml, :js
   
   def index
