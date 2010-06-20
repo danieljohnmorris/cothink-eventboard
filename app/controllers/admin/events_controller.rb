@@ -1,11 +1,20 @@
 class Admin::EventsController < ApplicationController
   before_filter :authenticate_admin!
   respond_to :html, :xml, :js
+  layout 'admin'
   
   # GET /admin_events
   # GET /admin_events.xml
   def index
-    @events = Event.all(:order => "start_date desc")
+    if (params[:view] == "past")
+      # show past events
+      @view = "past"
+      @events = Event.paginate :page => params[:past_page], :order => 'start_date DESC', :conditions => ['start_date < NOW()']
+    else
+      # show upcoming events
+      @view = "upcoming"
+      @events = Event.paginate :page => params[:upcoming_page], :order => 'start_date ASC', :conditions => ['start_date >= NOW()']
+    end
 
     respond_to do |format|
       format.html # index.html.erb

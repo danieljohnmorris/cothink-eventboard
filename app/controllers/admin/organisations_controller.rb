@@ -1,5 +1,6 @@
 class Admin::OrganisationsController < ApplicationController
   before_filter :authenticate_admin!
+  layout 'admin'
 
   # GET /admin_organisations
   # GET /admin_organisations.xml
