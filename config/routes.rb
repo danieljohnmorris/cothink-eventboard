@@ -2,16 +2,17 @@ CothinkEventboard::Application.routes.draw do |map|
   devise_for :admins
   devise_for :people
   
+  match '/admin/events/ingest' => 'admin/events#ingest'
+  match '/admin/events/hide(/:id(.:format))' => 'admin/events#hide', :as => :admin_event_hide
+  match '/admin/events/publish(/:id(.:format))' => 'admin/events#publish', :as => :admin_event_publish
+  match '/admin/events/bulk_publish((.:format))' => 'admin/events#bulk_publish', :as => :admin_events_bulk_publish
+  
   map.namespace :admin do |admin|
     admin.index '/', :controller => 'index', :action => 'index'
     admin.resources :organisations
     admin.resources :events 
   end
-  
-  match '/admin/events/ingest' => 'admin/events#ingest'
-  match '/admin/events/hide(/:id(.:format))' => 'admin/events#hide', :as => :admin_event_hide
-  match '/admin/events/publish(/:id(.:format))' => 'admin/events#publish', :as => :admin_event_publish
-  
+    
   resources :organisations, :only => [:index, :show]
   resources :events, :only => [:index, :show]  do
     member do
