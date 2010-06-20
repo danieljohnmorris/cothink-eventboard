@@ -136,6 +136,9 @@ class Admin::EventsController < ApplicationController
     set_publish_state(Event::PUBLISHED_STATE)
   end
   
+  def bulk_publish
+  end
+  
   protected
   
     # GET /admin/events/[hide|publish]
