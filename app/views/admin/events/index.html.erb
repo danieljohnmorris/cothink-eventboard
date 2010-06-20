@@ -23,7 +23,7 @@ $(function() {
 
 <form action="<%= admin_events_bulk_publish_path %>" method="get">
 	<%= will_paginate @events %>
-	<%= render :partial => "bulk_publish_action" %>
+	<%= render :partial => "action_bar" %>
 
 	<table>
 	  <tr>
@@ -117,10 +117,6 @@ $(function() {
 	<% end %>
 	</table>
 
+	<%= render :partial => "action_bar" %>
 	<%= will_paginate @events %>
-	<%= render :partial => "bulk_publish_action" %>
 </form>
-
-<p class="option-bar">
-	<%= link_to 'New Event', new_admin_event_path, :class => "new" %>
-</p>

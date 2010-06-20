@@ -179,7 +179,9 @@ html {
 ************************/
 
 .pagination {
-	border-top: 1px solid #aaa;
-	margin-top: 25px;
+	border: 2px solid #DFEDFF;
+	background-color: #EFF6FF;
+	margin: 25px 0 25px 0;
 	padding: 10px;
+	font-size: 1.3em;
 }
