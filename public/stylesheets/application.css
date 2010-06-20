@@ -13,9 +13,13 @@ textarea {
 /* Stars
 ************************/
 
+.event .star {
+	display: inline-block;
+	width: 50px;
+}
+
 .event .star a {
 	display: inline-block;
-	margin: 0 10px 0 0;
 	text-decoration: none;
 	color: #aaa;
 }
