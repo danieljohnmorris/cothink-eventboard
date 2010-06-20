@@ -137,6 +137,21 @@ class Admin::EventsController < ApplicationController
   end
   
   def bulk_publish
+    # set published
+    (params[:publish].keys).each do |event_id|
+      Event.find(event_id.to_i).publish
+    end
+    
+    # set draft
+    (params[:event].keys - params[:publish].keys).each do |event_id|
+      Event.find(event_id.to_i).hide
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to(admin_events_path, :notice => "#{params[:event].length} publish states updated.") }
+      format.js
+      format.xml  { head :ok }
+    end
   end
   
   protected
