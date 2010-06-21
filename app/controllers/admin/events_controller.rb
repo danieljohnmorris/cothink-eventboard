@@ -9,11 +9,11 @@ class Admin::EventsController < ApplicationController
     if (params[:view] == "past")
       # show past events
       @view = "past"
-      @events = Event.paginate :page => params[:past_page], :order => 'start_date DESC', :conditions => ['start_date < NOW()']
+      @events = Event.paginate :page => params[:page], :order => 'start_date DESC', :conditions => ['start_date < NOW()']
     else
       # show upcoming events
       @view = "upcoming"
-      @events = Event.paginate :page => params[:upcoming_page], :order => 'start_date ASC', :conditions => ['start_date >= NOW()']
+      @events = Event.paginate :page => params[:page], :order => 'start_date ASC', :conditions => ['start_date >= NOW()']
     end
 
     respond_to do |format|
