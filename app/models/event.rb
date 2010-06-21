@@ -19,11 +19,11 @@ class Event < ActiveRecord::Base
   end
   
   def self::starred(user)
-    user.owned_taggings(:context => "saves", :tag => "star").collect { |t| t.taggable }
+    user.owned_taggings(:context => :saves, :tag => "star").collect { |t| t.taggable }
   end
 
   def starred
-    taggings(:context => "saves", :tag => "star")
+    taggings(:context => :saves, :tag => "star")
   end
 
   def star(user)
