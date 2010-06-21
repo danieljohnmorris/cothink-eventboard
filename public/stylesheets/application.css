@@ -36,8 +36,8 @@ textarea {
 .event .star a.starred {
 	color: #FF8585;
 }
-	.event .star a .starred:hover {
-		color: #FF3737;
+	.event .star a.starred:hover {
+		color: red;
 	}
                                                                                                               
 /* Floating bar
