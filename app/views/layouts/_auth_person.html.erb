@@ -1,5 +1,5 @@
 <% unless person_signed_in? %>
-	<p><%= link_to_rpx "Signin using RPX!", person_session_url %></p>
+	<p><%= link_to_rpx "Social sign in", person_session_url %> or <%= link_to "retro sign in", new_person_session_url %> or <%= link_to "create an account", new_person_registration_url %>.</p>
 <% else %>
 	<p>Signed in as: <strong><%= current_person.email %></strong> - 
 	<%= link_to "View your starred events", starred_events_path %> or 
