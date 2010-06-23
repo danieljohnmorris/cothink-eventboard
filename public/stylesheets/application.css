@@ -16,6 +16,7 @@ textarea {
 .event .star {
 	display: inline-block;
 	width: 50px;
+	height: 20px;
 }
 
 .event .star a {
