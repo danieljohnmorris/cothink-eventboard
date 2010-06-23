@@ -10,7 +10,7 @@
 		<% end %>
 		</span>
 
-		<%=link_to event.title, event_path(event) %>
+		<%= link_to event.title, event_path(event) %>
 	</h4>
     <p class="data">
       <span><%= event.location %> (<%= map_link(event.location) %>)</span>,
