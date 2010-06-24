@@ -30,8 +30,8 @@ $(function() {
 	    <th><input type="checkbox" name="all" id="select_all" class="pub-state-checkbox" />
 		</th>
 	    <th style="width: 90px;">Publish-state</th>
-	    <th></th>
 	    <th>Title</th>
+	    <th></th>
 	    <!--<th>Description</th>-->
 	    <th>Location</th>
 	    <th>Start Date</th>
@@ -56,7 +56,7 @@ $(function() {
 				<%= render :partial => 'admin/events/link_hide', :locals => { :event => event } %>
 			<% else %>
 				<%= render :partial => 'admin/events/link_publish', :locals => { :event => event } %>
-			<% end %>
+			<% end %>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 	  	</td>
 	    <td><%= link_to 'Edit', edit_admin_event_path(event), :class => "edit" %></td>
 		<td><%= link_to event.title, admin_event_path(event) %></td>

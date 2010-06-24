@@ -5,6 +5,12 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable_on :saves, :topics
   
+  ### topics
+  
+  def topic_tags
+    self.topic_taggings.map {|tt|tt.tag}
+  end
+  
   ### starred stuff
   
   def starred?(person)
