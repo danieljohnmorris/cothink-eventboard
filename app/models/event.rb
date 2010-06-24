@@ -2,34 +2,35 @@ require 'fastercsv'
 class Event < ActiveRecord::Base
   validates_presence_of :title, :start_date, :location # minimum useful fields
   belongs_to :organisation
+
   acts_as_taggable_on :saves, :topics
   
   ### starred stuff
   
-  def starred?(user)
-    if self.saves_from(user).length > 0
+  def starred?(person)
+    if self.saves_from(person).length > 0
       starred = true
     else
       starred = false
     end
-            
+             
     return starred
   end
   
-  def self::starred(user)
-    user.owned_taggings(:context => "saves", :tag => "star").collect { |t| t.taggable }
+  def self::starred(person)
+    person.owned_taggings(:context => "saves", :tag => "star").collect { |t| t.taggable }
   end
 
   def starred
     taggings(:context => "saves", :tag => "star")
   end
 
-  def star(user)
-    user.tag(self, :with => "star", :on => :saves)
+  def star(person)
+    person.tag(self, :with => "star", :on => :saves)
   end
 
-  def unstar(user)
-    user.tag(self, :with => "", :on => :saves)
+  def unstar(person)
+    person.tag(self, :with => "", :on => :saves)
   end
   
   ### publish pseudo state machine
@@ -89,11 +90,11 @@ class Event < ActiveRecord::Base
     end
   end
   
-  def method_missing(method,*args,&block)
-    if method.to_s =~ /^(start|end)_(ampm|time|day|month)$/
-      _formatted_date($1 + '_date',$2)
-    else
-      super(method,*args,&block)
-    end
-  end
+  # def method_missing(method,*args,&block)
+  #   if method.to_s =~ /^(start|end)_(ampm|time|day|month)$/
+  #     _formatted_date($1 + '_date',$2)
+  #   else
+  #     super(method,*args,&block)
+  #   end
+  # end
 end
