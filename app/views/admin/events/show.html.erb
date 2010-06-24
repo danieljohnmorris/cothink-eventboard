@@ -43,10 +43,8 @@
 <hr />
 
 <p>
-  <b>Topics:</b>
-  <%= debug @event.topics %>
+	<strong>Topics:</strong> <%= render :partial => "admin/events/topic", :collection => @event.topic_list, :as => :topic, :spacer_template => "events/comma_separator" %>
 </p>
-
 
 <hr />
 
