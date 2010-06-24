@@ -70,10 +70,9 @@ class Admin::EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     params[:event][:publish_state] = params[:event][:publish_state].to_i
-
+    
     respond_to do |format|
       if @event.update_attributes!(params[:event])
-        raise @event.inspect
         format.html { redirect_to(admin_event_path(@event), :notice => 'Event was successfully updated.') }
         format.xml  { head :ok }
       else
