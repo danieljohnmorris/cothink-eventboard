@@ -7,23 +7,29 @@
 <hr />
 
 <p>
+	<strong>Topics:</strong> <%= render :partial => "admin/events/topic", :collection => @event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %>
+</p>
+
+<hr />
+
+<p>
   <b>Location:</b>
   <%= @event.location %>
 </p>
 
 <p>
-  <b>Start time:</b>
-  <%= @event.start_time %>
+  <b>Start date:</b>
+  <%= @event.start_date %>
 </p>
 
 <p>
   <b>Organisation:</b>
-  <%= @event.organisation %>
+  <%= link_to @event.organisation.name, organisation_path(@event.organisation) %>
 </p>
 
 <p>
   <b>Url:</b>
-  <%= @event.url %>
+  <%= link_to @event.url, @event.url %>
 </p>
 
 <p>
