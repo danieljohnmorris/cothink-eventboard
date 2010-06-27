@@ -37,3 +37,12 @@ a.edit:visited {
 	border: 2px solid #ddd;
 }
 
+
+table.admin tr td ul {
+	margin: 0 0 0 10px;
+	padding: 0;
+}
+	table.admin tr td ul li {
+		margin: 0 0 0 10px;
+		padding: 0;
+	}

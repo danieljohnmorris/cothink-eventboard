@@ -25,7 +25,7 @@ $(function() {
 	<%= will_paginate @events %>
 	<%= render :partial => "action_bar" %>
 
-	<table>
+	<table class="admin">
 	  <tr>
 	    <th><input type="checkbox" name="all" id="select_all" class="pub-state-checkbox" />
 		</th>
@@ -33,6 +33,7 @@ $(function() {
 	    <th>Title</th>
 	    <th></th>
 	    <!--<th>Description</th>-->
+	    <th>Tags</th>
 	    <th>Location</th>
 	    <th>Start Date</th>
 	    <th>Organisation</th>
@@ -61,6 +62,13 @@ $(function() {
 	    <td><%= link_to 'Edit', edit_admin_event_path(event), :class => "edit" %></td>
 		<td><%= link_to event.title, admin_event_path(event) %></td>
 	    <!--<td><%= event.description %></td>-->
+	    <td>
+			<% unless event.topic_list.empty? %>
+			<ul>
+				<li><%= render :partial => "admin/events/topic", :collection => event.topic_list, :as => :topic, :spacer_template => "shared/separator_list" %></li>
+			</ul>
+			<% end %>
+		</td>
 	    <td><%= event.location %> (<%= map_link(event.location) %>)</td>
 	    <td><%= event.start_date %></td>
 	    <td>
