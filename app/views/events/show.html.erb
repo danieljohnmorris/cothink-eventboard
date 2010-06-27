@@ -7,14 +7,14 @@
 <hr />
 
 <p>
-	<strong>Topics:</strong> <%= render :partial => "admin/events/topic", :collection => @event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %>
+	<strong>Topics:</strong> <%= render :partial => "events/link_topic", :collection => @event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %>
 </p>
 
 <hr />
 
 <p>
   <b>Location:</b>
-  <%= @event.location %>
+  <%= @event.location %>  (<%= map_link(@event.location) %>)
 </p>
 
 <p>
