@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
-    # annoying cant use named scope Event.published here! 
-    @events = Event.paginate :page => params[:page], :order => 'start_date ASC', :conditions => ["publish_state = ? AND start_date >= NOW()", Event::PUBLISHED_STATE]
+    @events = Event.published.in_the_future.by_start_date_forward
+    @events = @events.tagged_with(params[:topic], :context => :topic) if (params[:topic])
+    @events = @events.paginate :page => params[:page]
   end
 end
