@@ -18,15 +18,14 @@ textarea {
 	width: 50px;
 	height: 20px;
 }
-
-.event .star a {
-	display: inline-block;
-	text-decoration: none;
-	color: #aaa;
-}
-	.event .star a:hover {
-		color: #E8B228;
+	.event .star a {
+		display: inline-block;
+		text-decoration: none;
+		color: #aaa;
 	}
+		.event .star a:hover {
+			color: #E8B228;
+		}
 	
 .star img {
 	position: relative;
@@ -130,10 +129,10 @@ html {
 		.events-list .event .time {
 		}
 	.events-list .week {
-		background:#D6E2F3;
-		font-size:1.5em;
-		padding:0.5em;
-		margin:0.5em 0;
+		font-size:1.4em;
+		color: #999;
+		margin: 1em 0 0.5em 0;
+		border-bottom: 1px solid #999;
 	}
 	.events-list .week .range {
 		display:block;
@@ -165,6 +164,7 @@ html {
 ************************/
 
 .event {
+	position: relative;
 	margin: 0 0 6px 0;
 }
 	.event h4 {
@@ -178,6 +178,13 @@ html {
 	}
 		.event .data a {
 			color: #555;
+		}
+		.event .data .date {
+			position: absolute;
+			top: 5px;
+			right: 0px;
+			font-size: 1.5em;
+			color: #aaa;
 		}
 	
 /* Pagination
