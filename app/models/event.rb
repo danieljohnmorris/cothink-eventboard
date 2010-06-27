@@ -1,17 +1,31 @@
 require 'fastercsv'
 class Event < ActiveRecord::Base
-  validates_presence_of :title, :start_date, :location # minimum useful fields
   belongs_to :organisation
 
+  validates_presence_of :title, :start_date, :location # minimum useful fields
+
+  named_scope :by_start_date_backward, :order => "start_date DESC"
+  named_scope :by_start_date_forward, :order => "start_date ASC"
+  named_scope :in_the_past, :conditions => "start_date < NOW()"  
+  named_scope :in_the_future, :conditions => "start_date >= NOW()"  
+
+  #pub state
+  DRAFT_STATE = 0
+  PUBLISHED_STATE = 1
+  attr_protected :publish_state
+  named_scope :published, :conditions => "publish_state = #{PUBLISHED_STATE}"  
+  named_scope :drafts, :conditions => "publish_state = #{DRAFT_STATE}"  
+
+  # tagging
   acts_as_taggable_on :saves, :topics
-  
-  ### topics
+
+  ### topic methods
   
   def topic_tags
     self.topic_taggings.map {|tt|tt.tag}
   end
   
-  ### starred stuff
+  ### starring methods
   
   def starred?(person)
     if self.saves_from(person).length > 0
@@ -40,11 +54,7 @@ class Event < ActiveRecord::Base
   end
   
   ### publish pseudo state machine
-  
-  attr_protected :publish_state
-  DRAFT_STATE = 0
-  PUBLISHED_STATE = 1
-  
+    
   # rails 2 style:
   #named_scope :published, :conditions => ["publish_state = #{Event::PUBLISHED_STATE}"]
   #named_scope :drafts, :conditions => ["publish_state = #{Event::DRAFT_STATE}"]
