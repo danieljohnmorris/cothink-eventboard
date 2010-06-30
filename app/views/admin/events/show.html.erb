@@ -32,12 +32,12 @@
 
 <p>
   <b>Organisation:</b>
-  <%= @event.organisation %>
+  <%= link_to @event.organisation.name, admin_organisation_path(@event.organisation) %>
 </p>
 
 <p>
   <b>Url:</b>
-  <%= @event.url %>
+  <%= link_to @event.url, @event.url %>
 </p>
 
 <hr />
