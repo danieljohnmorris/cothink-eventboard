@@ -9,15 +9,19 @@
 			<%= render :partial => 'events/link_star', :locals => { :event => event } %>
 		<% end %>
 		</span>
-
-		<%=link_to event.title, event_path(event) %>
+		<%= link_to event.title, event_path(event) %>
 	</h4>
     <p class="data">
-      <span><%= event.location %> (<%= map_link(event.location) %>)</span>,
+		<span class="location"><%= event.location %> (<%= map_link(event.location) %>).</span>
+		<span class="date"><%= event.start_date %></span>
 
-      <% if event.organisation %>
-		<span>organised by <%= link_to event.organisation.name, organisation_path(event.organisation) %></span>
-	  <% end %>
+		<% if event.organisation %>
+			<span class="organiser">Organised by <%= link_to event.organisation.name, organisation_path(event.organisation) %>.</span>
+		<% end %>
+
+		<% unless event.topic_list.empty? %>
+			Topics: <%= render :partial => "events/link_topic", :collection => event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %>
+		<% end %>
     </p>
   </div>
 </li>

@@ -9,11 +9,11 @@ class Admin::EventsController < ApplicationController
     if (params[:view] == "past")
       # show past events
       @view = "past"
-      @events = Event.paginate :page => params[:page], :order => 'start_date DESC', :conditions => ['start_date < NOW()']
+      @events = Event.in_the_past.by_start_date_backward.paginate :page => params[:page]
     else
       # show upcoming events
       @view = "upcoming"
-      @events = Event.paginate :page => params[:page], :order => 'start_date ASC', :conditions => ['start_date >= NOW()']
+      @events = Event.in_the_future.by_start_date_forward.paginate :page => params[:page]
     end
 
     respond_to do |format|
@@ -70,10 +70,9 @@ class Admin::EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     params[:event][:publish_state] = params[:event][:publish_state].to_i
-
+    
     respond_to do |format|
       if @event.update_attributes!(params[:event])
-        raise @event.inspect
         format.html { redirect_to(admin_event_path(@event), :notice => 'Event was successfully updated.') }
         format.xml  { head :ok }
       else
