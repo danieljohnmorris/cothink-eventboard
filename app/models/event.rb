@@ -18,13 +18,11 @@ class Event < ActiveRecord::Base
   named_scope :drafts, :conditions => "publish_state = #{DRAFT_STATE}"  
 
   # tagging
-  acts_as_taggable_on :saves, :topics
+  acts_as_taggable_on :saves, :topics, :types, :industries
 
-  ### topic methods
-  
-  def topic_tags
-    self.topic_taggings.map {|tt|tt.tag}
-  end
+  def industry_tags   self.industry_taggings.map {|tt|tt.tag}   end
+  def type_tags       self.type_taggings.map {|tt|tt.tag}       end
+  def topic_tags      self.topic_taggings.map {|tt|tt.tag}      end
   
   ### starring methods
   
