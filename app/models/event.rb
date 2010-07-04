@@ -86,31 +86,15 @@ class Event < ActiveRecord::Base
   end
   
   
-  
-  ### tim stuffs
-  
-  def _formatted_date(date,piece)
-    date = self.send(date)
-    return "" unless date # otherwise get errors
 
-    if piece == 'ampm'
-      date.strftime('%p').downcase
-    elsif piece == 'day'
-      date.day
-    elsif piece == 'month'
-      date.strftime('%b')
-    else
-      hour = date.strftime('%I').gsub(/^0/,'')
-      minutes = date.strftime('%M')
-      minutes == '00' ? hour : "#{hour}.#{minutes}"
-    end
+  # sphinx 
+  define_index do
+
+    indexes title
+    indexes description
+    indexes organisation(:name), :as => :organiser
+
+    has start_date
+
   end
-  
-  # def method_missing(method,*args,&block)
-  #   if method.to_s =~ /^(start|end)_(ampm|time|day|month)$/
-  #     _formatted_date($1 + '_date',$2)
-  #   else
-  #     super(method,*args,&block)
-  #   end
-  # end
 end
