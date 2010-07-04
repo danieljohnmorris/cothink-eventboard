@@ -4,8 +4,8 @@ source 'http://gemcutter.org'
 # gem 'rails', '3.0.0.beta3'
 # gem "pg", :group => :production # for heroku
 
-# Bundle edge Rails instead:
-gem 'rails', :git => 'git://github.com/rails/rails.git'
+# use tagged v of rails to avoid bundler dependency problem
+gem 'rails',  :tag => 'v3.0.0.beta4', :git => 'git://github.com/rails/rails.git' 
 # gem 'rails', :git => 'git://github.com/tiennou/rails.git'
 
 #weird dependancies on server (some of which pull in rails beta4 components)
@@ -19,6 +19,7 @@ gem "bundler", "0.9.26"
 gem 'mysql'
 gem 'will_paginate', '3.0.pre'
 gem 'acts-as-taggable-on'
+gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
 
 # auth
 gem "rpx_now"
