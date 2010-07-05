@@ -1,27 +1,42 @@
 <%= week %>
-<li class="event" id="event-<%= event.id %>">
-  <div class="nontime">
-    <h4>
-		<span class="star">
+<li id="event-<%= event.id %>" class="grid24col clearboth">
+	<span class="star grid1col left">
 		<% if person_signed_in? and event.starred?(current_person) %>
-			<%= render :partial => 'events/link_unstar', :locals => { :event => event } %>
+			<%= render :partial => "events/link_unstar", :locals => { :event => event } %>
 		<% else %>
-			<%= render :partial => 'events/link_star', :locals => { :event => event } %>
+			<%= render :partial => "events/link_star", :locals => { :event => event } %>
 		<% end %>
-		</span>
-		<%= link_to event.title, event_path(event) %>
-	</h4>
-    <p class="data">
-		<span class="location"><%= event.location %> (<%= map_link(event.location) %>).</span>
-		<span class="date"><%= event.start_date %></span>
-
-		<% if event.organisation %>
-			<span class="organiser">Organised by <%= link_to event.organisation.name, organisation_path(event.organisation) %>.</span>
+	</span>
+	<h3 class="grid9col left marginleft"><%= event.title %></h3>
+	<div class="grid7col left">
+		<ul class="tags" style="background-color: red;">
+			<% first_tag = true 
+			event.combined_tags.each do |tag_set| %>
+				<% tag_set.each do |tag| %>
+					<li class="left"><a href="#" <% if first_tag %>class="primary-tag" <% end %>title="<%= tag.name %>"><%= tag.name %></a></li>
+					<% first_tag = false if first_tag
+				end %>
+			<% end %>
+		</ul>
+		<br class="clearboth" />
+	</div>
+	<span class="small-star grid1col left marginleft">
+		<% if person_signed_in? and event.starred?(current_person) %>
+			<%= render :partial => "organisations/link_unstar", :locals => { :org => event.organisation } %>
+		<% else %>
+			<%= render :partial => "organisations/link_star", :locals => { :org => event.organisation } %>
 		<% end %>
-
-		<% unless event.topic_list.empty? %>
-			Topics: <%= render :partial => "events/link_topic", :collection => event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %>
-		<% end %>
-    </p>
-  </div>
+	</span>
+	<span class="grid2col left marginleft small">
+		<%= link_to event.organisation.name, organisation_path(event.organisation), :class => "organiser" %>
+	</span>
+	<span class="grid2col left marginleft small subtle">
+		<strong>Mon June 14</strong><br />
+		London
+	</span>
+	<div class="grid2col left marginleft">
+		<a class="attend-button grid2col">Attend</a>
+		<a class="share-button grid2col">Share</a>
+	</div>
+	<br class="clearboth" />
 </li>

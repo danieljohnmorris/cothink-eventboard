@@ -20,15 +20,19 @@ class Event < ActiveRecord::Base
   # tagging
   acts_as_taggable_on :saves, :topics, :types, :industries
 
-  def industry_tags   
-    self.industry_taggings.map {|tt|tt.tag}   
+  def combined_tags
+    [self.topics] + [self.types] + [self.industries]
   end
-  def type_tags       
-    self.type_taggings.map {|tt|tt.tag}       
-  end
-  def topic_tags      
-    self.topic_taggings.map {|tt|tt.tag}      
-  end
+
+  # def industry_tags   
+  #   self.industry_taggings.map {|tt|tt.tag}   
+  # end
+  # def type_tags       
+  #   self.type_taggings.map {|tt|tt.tag}       
+  # end
+  # def topic_tags      
+  #   self.topic_taggings.map {|tt|tt.tag}      
+  # end
   
   ### starring methods
   

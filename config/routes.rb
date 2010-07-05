@@ -13,7 +13,17 @@ CothinkEventboard::Application.routes.draw do |map|
     admin.resources :events 
   end
     
-  resources :organisations, :only => [:index, :show]
+  resources :organisations, :only => [:index, :show] do
+    member do
+      get :star
+      get :unstar
+    end
+
+    collection do
+      get :starred
+    end
+  end
+
   resources :events, :only => [:index, :show]  do
     member do
       get :star
