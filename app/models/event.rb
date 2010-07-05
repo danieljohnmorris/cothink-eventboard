@@ -20,9 +20,15 @@ class Event < ActiveRecord::Base
   # tagging
   acts_as_taggable_on :saves, :topics, :types, :industries
 
-  def industry_tags   self.industry_taggings.map {|tt|tt.tag}   end
-  def type_tags       self.type_taggings.map {|tt|tt.tag}       end
-  def topic_tags      self.topic_taggings.map {|tt|tt.tag}      end
+  def industry_tags   
+    self.industry_taggings.map {|tt|tt.tag}   
+  end
+  def type_tags       
+    self.type_taggings.map {|tt|tt.tag}       
+  end
+  def topic_tags      
+    self.topic_taggings.map {|tt|tt.tag}      
+  end
   
   ### starring methods
   
@@ -83,7 +89,6 @@ class Event < ActiveRecord::Base
   def draft?
     return self.publish_state == DRAFT_STATE ? true : false
   end
-  
   
   
   ### tim stuffs
