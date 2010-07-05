@@ -13,3 +13,4 @@ log/production.log
 tmp/pids/server.pid
 capybara-*.html
 vendor/cache
+relock/

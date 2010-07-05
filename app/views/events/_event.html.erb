@@ -9,14 +9,14 @@
 			<%= render :partial => 'events/link_star', :locals => { :event => event } %>
 		<% end %>
 		</span>
-		<%= link_to event.title, event_path(event) %>
+		<%= link_to event.title.html_safe, event_path(event) %>
 	</h4>
     <p class="data">
-		<span class="location"><%= event.location %> (<%= map_link(event.location) %>).</span>
+		<span class="location"><%= event.location.html_safe %> (<%= map_link(event.location) %>).</span>
 		<span class="date"><%= event.start_date %></span>
 
 		<% if event.organisation %>
-			<span class="organiser">Organised by <%= link_to event.organisation.name, organisation_path(event.organisation) %>.</span>
+			<span class="organiser">Organised by <%= link_to event.organisation.name.html_safe, organisation_path(event.organisation) %>.</span>
 		<% end %>
 
 		<% unless event.topic_list.empty? %>

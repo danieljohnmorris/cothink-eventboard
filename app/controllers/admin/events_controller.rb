@@ -101,15 +101,25 @@ class Admin::EventsController < ApplicationController
     @parsed_file= FasterCSV.parse(params[:csv][:file], :headers => true, :skip_blanks => true) # parse=string, read=file!
     
     @parsed_file.each do |row|
+      
+
+      
         e = Event.new
         e.title = row[0]
         e.description = row[1]
-        e.start_date = Date.parse(row[2])
+        e.start_date = Time.parse(row[2]) rescue Date.parse(row[2])
         e.location = row[3]
-        e.source = row[4]
-        e.url = row[5]
+        e.cost = row[4]
+        e.intended_audience = row[5]
+        e.notes = row[6]
+        e.url = row[7]
+        e.telephone = row[8]
+        e.email = row[9]
+        e.people = row[10]
+        e.uuid = row[11]
         e.publish_state = params[:csv][:publish_state]
-        e.organisation = Organisation.find_or_create_by_name(row[6])
+        
+        e.organisation = Organisation.find_or_create_by_name(row[12], :description => row[13], :url => row[14])
         saved_events << e if e.save
     end
     
