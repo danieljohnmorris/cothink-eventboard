@@ -98,28 +98,33 @@ class Admin::EventsController < ApplicationController
   def ingest
     # TODO - move to model, hopefully rails will fix stupid mysqlcompat error!
     saved_events = []
-    @parsed_file= FasterCSV.parse(params[:csv][:file], :headers => true, :skip_blanks => true) # parse=string, read=file!
+    @parsed_file= FasterCSV.parse(params[:csv][:file], :headers => false, :skip_blanks => true) # parse=string, read=file!
+    
+    headers = @parsed_file.shift
     
     @parsed_file.each do |row|
       
-
-      
         e = Event.new
-        e.title = row[0]
-        e.description = row[1]
-        e.start_date = Time.parse(row[2]) rescue Date.parse(row[2])
-        e.location = row[3]
-        e.cost = row[4]
-        e.intended_audience = row[5]
-        e.notes = row[6]
-        e.url = row[7]
-        e.telephone = row[8]
-        e.email = row[9]
-        e.people = row[10]
-        e.uuid = row[11]
+        
+        e.attributes.keys.each do |attribute|
+          if attribute == 'start_date'
+            date = row[headers.index(attribute)] if headers.index(attribute)
+            e[attribute] = Time.parse(date) rescue Date.parse(date) rescue next if date
+          else
+            e[attribute] = row[headers.index(attribute)] if headers.index(attribute)
+          end
+        end
+        
+        org_name = row[headers.index('org_title')] if headers.index('org_title')
+        if org_name
+          o = Organisation.find_or_create_by_name(org_name)
+          e.organisation = o
+          o.description  = row[headers.index('org_desc')] if headers.index('org_desc')
+          o.url          = row[headers.index('org_url')] if headers.index('org_url')
+        end
+        
         e.publish_state = params[:csv][:publish_state]
         
-        e.organisation = Organisation.find_or_create_by_name(row[12], :description => row[13], :url => row[14])
         saved_events << e if e.save
     end
     
