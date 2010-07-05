@@ -1,4 +1,5 @@
 require 'fastercsv'
+
 class Event < ActiveRecord::Base
   belongs_to :organisation
 
@@ -6,8 +7,8 @@ class Event < ActiveRecord::Base
 
   named_scope :by_start_date_backward, :order => "start_date DESC"
   named_scope :by_start_date_forward, :order => "start_date ASC"
-  named_scope :in_the_past, :conditions => "start_date < NOW()"  
-  named_scope :in_the_future, :conditions => "start_date >= NOW()"  
+  named_scope :in_the_past, :conditions => "start_date < NOW()"
+  named_scope :in_the_future, :conditions => "start_date >= NOW()"
 
   #pub state
   DRAFT_STATE = 0
@@ -17,13 +18,21 @@ class Event < ActiveRecord::Base
   named_scope :drafts, :conditions => "publish_state = #{DRAFT_STATE}"  
 
   # tagging
-  acts_as_taggable_on :saves, :topics
+  acts_as_taggable_on :saves, :topics, :types, :industries
 
-  ### topic methods
-  
-  def topic_tags
-    self.topic_taggings.map {|tt|tt.tag}
+  def combined_tags
+    [self.topics] + [self.types] + [self.industries]
   end
+
+  # def industry_tags   
+  #   self.industry_taggings.map {|tt|tt.tag}   
+  # end
+  # def type_tags       
+  #   self.type_taggings.map {|tt|tt.tag}       
+  # end
+  # def topic_tags      
+  #   self.topic_taggings.map {|tt|tt.tag}      
+  # end
   
   ### starring methods
   
@@ -42,7 +51,7 @@ class Event < ActiveRecord::Base
   end
 
   def starred
-    taggings(:context => "saves", :tag => "star")
+    taggings(:context => :saves, :tag => "star")
   end
 
   def star(person)
@@ -84,7 +93,6 @@ class Event < ActiveRecord::Base
   def draft?
     return self.publish_state == DRAFT_STATE ? true : false
   end
-  
   
   
   ### tim stuffs

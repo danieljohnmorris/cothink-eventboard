@@ -16,6 +16,8 @@ class EventsController < ApplicationController
       format.xml  { render :xml => @event }
     end
   end
+  
+  ###### STARRING CONTROLLER METHODS
 
   # GET /events/starred
   # GET /events/starred.xml
