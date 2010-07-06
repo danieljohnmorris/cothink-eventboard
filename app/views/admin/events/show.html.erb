@@ -42,9 +42,9 @@
 
 <hr />
 
-<p>
-	<strong>Topics:</strong> <%= render :partial => "admin/events/topic", :collection => @event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %>
-</p>
+<p><strong>Topic(s):</strong> <%= render :partial => "admin/events/topic", :collection => @event.topic_list, :as => :topic, :spacer_template => "shared/separator_comma" %></p>
+<p><strong>Event Type(s):</strong> <%= render :partial => "admin/events/topic", :collection => @event.type_list, :as => :topic, :spacer_template => "shared/separator_comma" %></p>
+<p><strong>Industry(s):</strong> <%= render :partial => "admin/events/topic", :collection => @event.industry_list, :as => :topic, :spacer_template => "shared/separator_comma" %></p>
 
 <hr />
 

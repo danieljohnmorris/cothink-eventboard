@@ -140,12 +140,14 @@ class Admin::EventsController < ApplicationController
 
   # GET /admin/events/hide
   # GET /admin/events/hide.xml
+  # GET /admin/events/hide.js
   def hide
     set_publish_state(Event::DRAFT_STATE)
   end
 
   # GET /admin/events/publish
   # GET /admin/events/publish.xml
+  # GET /admin/events/publish.js
   def publish
     set_publish_state(Event::PUBLISHED_STATE)
   end
