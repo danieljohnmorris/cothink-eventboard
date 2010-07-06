@@ -61,21 +61,22 @@
 	  <ul class="comments">
 	    <% [["Great looking event!","John Floggs"],["Wow, I earned my BlackStar, go me.","Herbet McFluppet"]].each do |comment, commentor| %>
 	      <li>
-	        <p><%= comment %></p>
-	        <span class="commentor"><%= commentor %></span>
+	        <p class="comment"><%= comment %></p>
+	        <p class="commentator"><%= commentor %></p>
 	      </li>
 	    <% end %>
 	  </ul>
-	  
-    <h3>Organiser:</h3>
-    <div class="organisation-description"><%= event.organisation.description || "We're waiting for a description for this organisation." %></div>
-    <dl class="organisation-details">
-      <dt>Telephone</dt>
-      <dd><%= event.telephone %></dd>
-      <dt>Email</dt>
-      <dd><%= event.email %></dd>
-    </dl>
-	
+	  <div class="organiser">
+      <div class="organiser-description">
+        <%= event.organisation.description || "We're waiting for a description for this organiser." %>
+      </div>
+      <dl class="organiser-details">
+        <dt>Telephone:</dt>
+        <dd><%= event.telephone %></dd>
+        <dt>Email:</dt>
+        <dd><%= event.email     %></dd>
+      </dl>
+	  </div>
 	</div>
 	
 </li>

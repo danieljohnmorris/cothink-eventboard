@@ -62,7 +62,9 @@ img.logo {
 		background: #C8FFBF;
 		border-color: #A2EF95;
 	}
-	
+
+/* Event
+************************/	
 .event {
 	border-top:1px solid #E0DED6;
 	list-style:none outside none;
@@ -72,4 +74,33 @@ img.logo {
 	.event h3 {
 		color: #000;
 		font-size: 1.3em;
+	}
+	
+
+/* Quick preview
+************************/
+.event .preview {
+	clear:both;
+	overflow:auto;
+}
+/* Block-level proportions and macro-layout */
+	.event .preview .description
+	{
+		width: 350px;
+		float:left;
+		margin-left:40px;
+	}
+	.event .preview .comments {
+		width: 220px;
+		float:left;
+		margin-left: 40px; 
+	}
+		.event .preview .comments .commentator {
+			font-size:0.9em;
+			text-align:right;
+		}
+	.event .preview .organiser  {
+		margin-left:60px;
+		width:200px;
+		float:left;
 	}
