@@ -1,0 +1,64 @@
+body {
+	background: #eee;
+}
+
+#doc, #doc2, #doc3, #doc4 {
+	background: #fff;
+	padding: 0 10px 0 10px;
+}
+
+img.logo {
+	width: 400px;
+}
+
+#hd {
+	padding: 20px;
+}
+
+#mast h1 {
+	margin: 0;
+}
+	#strapline {
+		color: #545454;
+		width: 400px;
+		border-top: 2px solid #eee;
+		padding: 5px 0 0 0;
+		line-height: 1em;
+		font-size: 1.4em;
+		text-align: justify;
+	}
+
+#user p {
+	text-align: right;
+	font-size: 1.2em;
+}
+	#user p a {
+	}
+		
+.hide {
+	display: none;
+}
+
+.events {
+}
+
+#messages {
+	padding: 10px;	
+}
+#messages .error, #messages .info, #messages .success {
+	padding: 10px;
+	border: 2px solid;	
+}
+	#messages .info {
+		background: #eee;
+		border-color: #ccc;
+	}
+	#messages .error {
+		background: #FFDFDF;
+		border-color: #F3AFB5;
+	}
+	#messages .success {
+		background: #C8FFBF;
+		border-color: #A2EF95;
+	}
+	
