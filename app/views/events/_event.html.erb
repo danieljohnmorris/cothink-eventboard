@@ -1,7 +1,8 @@
-<%= week %>
-<li id="event-<%= event.id %>" class="grid24col clearboth">
-
-  <!-- stars -->
+<%
+#= week 
+#disable week heading for now
+%>
+<li id="event-<%= event.id %>" class="event grid24col clearboth">
 	<span class="star grid1col left">
 		<% if person_signed_in? and event.starred?(current_person) %>
 			<%= render :partial => "events/link_unstar", :locals => { :event => event } %>

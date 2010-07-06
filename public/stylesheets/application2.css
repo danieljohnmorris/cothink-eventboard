@@ -19,7 +19,8 @@ img.logo {
 	margin: 0;
 }
 	#strapline {
-		color: #545454;
+		/*color: #545454;*/
+		color: #9a9a9a;
 		width: 400px;
 		border-top: 2px solid #eee;
 		padding: 5px 0 0 0;
@@ -62,3 +63,13 @@ img.logo {
 		border-color: #A2EF95;
 	}
 	
+.event {
+	border-top:1px solid #E0DED6;
+	list-style:none outside none;
+	margin:0;
+	padding-top:10px;
+}
+	.event h3 {
+		color: #000;
+		font-size: 1.3em;
+	}
