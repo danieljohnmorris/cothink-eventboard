@@ -24,11 +24,19 @@
 		<br class="clearboth" />
 	</div>
 	<span class="small-star grid1col left marginleft">
-		<% if person_signed_in? and event.starred?(current_person) %>
-			<%= render :partial => "organisations/link_unstar", :locals => { :org => event.organisation } %>
-		<% else %>
+		<% 
+		#if person_signed_in? and event.starred?(current_person) 
+		%>
+			<%
+			#= render :partial => "organisations/link_unstar", :locals => { :org => event.organisation } 
+			%>
+		<% 
+		#else 
+		%>
 			<%= render :partial => "organisations/link_star", :locals => { :org => event.organisation } %>
-		<% end %>
+		<% 
+		#end 
+		%>
 	</span>
 	<span class="grid2col left marginleft small">
 		<%= link_to event.organisation.name.html_safe, organisation_path(event.organisation), :class => "organiser" %>
