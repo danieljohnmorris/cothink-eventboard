@@ -24,7 +24,9 @@
 
 <p>
   <b>Organisation:</b>
+  <% if @event.organisation %>
   <%= link_to @event.organisation.name, organisation_path(@event.organisation) %>
+  <% end %>
 </p>
 
 <p>
