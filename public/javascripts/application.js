@@ -16,15 +16,18 @@ $(function() {
 		$("img", this).attr("src", "/images/star_dim.gif");
 	});
 	
-	$('.event').hover(function(){
-		var self      = this;
-		$(self).data('stillOver',true);
-		setTimeout(function(){
-			if($(self).data('stillOver')) $('.preview',self).slideDown();
-		},400);
-	},function(){
-		$(this).data('stillOver',false);
-		$('.preview',this).slideUp();
+	var slide = function(event,context,up) {
+		var isClickable = ['title','event','preview'].some(function(clazz){return $(event.target).hasClass(clazz);});
+		if(isClickable) {
+			console.log(up ? 'slideUp' : 'slideDown');
+			$('.preview',context)[ up ? 'slideUp' : 'slideDown']();
+		}
+	};
+	
+	$('.event').toggle(function(event){
+		slide(event,this,true);
+	},function(event){
+		slide(event,this,false);
 	});
 	
 });
