@@ -39,7 +39,9 @@
 		<% 
 		#else 
 		%>
-			<%= render :partial => "organisations/link_star", :locals => { :org => event.organisation } %>
+			<%= 
+			#render :partial => "organisations/link_star", :locals => { :org => event.organisation } 
+			%>
 		<% 
 		#end 
 		%>
