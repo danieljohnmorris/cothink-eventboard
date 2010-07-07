@@ -49,8 +49,6 @@
 	<span class="grid2col left marginleft small">
 		<% if event.organisation %>
 			<%= link_to event.organisation.name.html_safe, organisation_path(event.organisation), :class => "organiser" %>
-		<% else %>
-			N/A
 		<% end %>
 	</span>
 	
@@ -82,7 +80,11 @@
 	  </ul>
 	  <div class="organiser">
       <div class="organiser-description">
-        <%= event.organisation.description || "We're waiting for a description for this organiser." %>
+		<% if event.organisation %>
+        	<%= event.organisation.description %>
+		<% else %>
+			We're waiting for a description for this organiser.
+		<% end %>
       </div>
       <dl class="organiser-details">
         <dt>Telephone:</dt>
