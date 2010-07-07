@@ -82,6 +82,7 @@ img.logo {
 .event .preview {
 	clear:both;
 	overflow:auto;
+	display:none;
 }
 /* Block-level proportions and macro-layout */
 	.event .preview .description
