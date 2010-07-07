@@ -1,8 +1,6 @@
-<h2><%= @event.title %></h2>
+<h1><%= @event.title %></h1>
 
-<p>
-  <%= @event.description %>
-</p>
+<p><%= @event.description.html_safe %></p>
 
 <hr />
 
@@ -24,7 +22,9 @@
 
 <p>
   <b>Organisation:</b>
+  <% if @event.organisation %>
   <%= link_to @event.organisation.name, organisation_path(@event.organisation) %>
+  <% end %>
 </p>
 
 <p>
