@@ -47,7 +47,11 @@
 		%>
 	</span>
 	<span class="grid2col left marginleft small">
-		<%= link_to event.organisation.name.html_safe, organisation_path(event.organisation), :class => "organiser" %>
+		<% if event.organisation %>
+			<%= link_to event.organisation.name.html_safe, organisation_path(event.organisation), :class => "organiser" %>
+		<% else %>
+			N/A
+		<% end %>
 	</span>
 	
 	<!-- date -->
