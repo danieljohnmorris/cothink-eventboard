@@ -10,7 +10,11 @@
 			<%= render :partial => "events/link_star", :locals => { :event => event } %>
 		<% end %>
 	</span>
+	
+	<!-- title -->
 	<h3 class="grid9col left marginleft"><%= event.title.html_safe %></h3>
+	
+	<!-- tags -->
 	<div class="grid7col left">
 		<ul class="tags" style="background-color: red;">
 			<% first_tag = true 
@@ -23,6 +27,8 @@
 		</ul>
 		<br class="clearboth" />
 	</div>
+	
+	<!-- organiser -->
 	<span class="small-star grid1col left marginleft">
 		<% 
 		#if person_signed_in? and event.starred?(current_person) 
@@ -41,13 +47,44 @@
 	<span class="grid2col left marginleft small">
 		<%= link_to event.organisation.name.html_safe, organisation_path(event.organisation), :class => "organiser" %>
 	</span>
+	
+	<!-- date -->
 	<span class="grid2col left marginleft small subtle">
 		<strong>Mon June 14</strong><br />
 		London
 	</span>
+	
+	<!-- actions -->
 	<div class="grid2col left marginleft">
 		<a class="attend-button grid2col">Attend</a>
 		<a class="share-button grid2col">Share</a>
 	</div>
 	<br class="clearboth" />
+	
+	<!-- quick preview -->
+	<div class="preview">
+	  
+	  <div class="description"><%= event.description.html_safe %></div>
+	  
+	  <ul class="comments">
+	    <% [["Great looking event!","John Floggs"],["Wow, I earned my BlackStar, go me.","Herbet McFluppet"]].each do |comment, commentor| %>
+	      <li>
+	        <p class="comment"><%= comment %></p>
+	        <p class="commentator"><%= commentor %></p>
+	      </li>
+	    <% end %>
+	  </ul>
+	  <div class="organiser">
+      <div class="organiser-description">
+        <%= event.organisation.description || "We're waiting for a description for this organiser." %>
+      </div>
+      <dl class="organiser-details">
+        <dt>Telephone:</dt>
+        <dd><%= event.telephone %></dd>
+        <dt>Email:</dt>
+        <dd><%= event.email     %></dd>
+      </dl>
+	  </div>
+	</div>
+	
 </li>

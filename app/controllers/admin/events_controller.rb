@@ -115,7 +115,7 @@ class Admin::EventsController < ApplicationController
           end
         end
         
-        org_name = row[headers.index('org_title')] if headers.index('org_title')
+        org_name = row[headers.index('organiser_title')] if headers.index('organiser_title')
         if org_name
           o = Organisation.find_or_create_by_name(org_name)
           e.organisation = o
