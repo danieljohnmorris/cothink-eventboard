@@ -19,6 +19,9 @@ class Event < ActiveRecord::Base
 
   # tagging
   acts_as_taggable_on :saves, :topics, :types, :industries
+  
+  # comments
+  acts_as_commentable
 
   def combined_tags
     [self.topics] + [self.types] + [self.industries]

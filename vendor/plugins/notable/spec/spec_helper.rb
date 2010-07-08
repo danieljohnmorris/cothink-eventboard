@@ -1,1 +1,0 @@
-Dir.glob(File.dirname(__FILE__) + '/../app/**/*') {|f| require f unless File.directory?(f)}

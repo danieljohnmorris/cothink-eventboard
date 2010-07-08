@@ -16,6 +16,10 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
+  acts_as_commentable: 
+    group: 
+    - :default
+    version: ">= 0"
   mysql: 
     group: 
     - :default
@@ -52,18 +56,18 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  will_paginate: 
-    group: 
-    - :default
-    version: = 3.0.pre
   arel: 
     group: 
     - :default
     version: ">= 0"
+  will_paginate: 
+    group: 
+    - :default
+    version: = 3.0.pre
   devise: 
     group: 
     - :default
-    version: ">= 0"
+    version: = 1.1.rc2
   cucumber-rails: 
     group: 
     - :test
@@ -127,27 +131,27 @@ specs:
     version: 1.0.0
 - activesupport: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - builder: 
     version: 2.1.2
 - i18n: 
     version: 0.4.1
 - activemodel: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - erubis: 
-    version: 2.6.5
+    version: 2.6.6
 - rack: 
     version: 1.1.0
 - rack-mount: 
-    version: 0.6.4
+    version: 0.6.6
 - rack-test: 
     version: 0.5.4
 - tzinfo: 
     version: 0.3.22
 - actionpack: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - mime-types: 
     version: "1.16"
 - polyglot: 
@@ -155,20 +159,22 @@ specs:
 - treetop: 
     version: 1.4.8
 - mail: 
-    version: 2.2.4
+    version: 2.2.5
 - actionmailer: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - arel: 
     version: 0.4.0
 - activerecord: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - activeresource: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - acts-as-taggable-on: 
     version: 2.0.6
+- acts_as_commentable: 
+    version: 3.0.0
 - bcrypt-ruby: 
     version: 2.1.2
 - bundler: 
@@ -184,7 +190,7 @@ specs:
 - net-ssh-gateway: 
     version: 1.0.1
 - capistrano: 
-    version: 2.5.18
+    version: 2.5.19
 - culerity: 
     version: 0.2.10
 - nokogiri: 
@@ -196,7 +202,7 @@ specs:
 - selenium-webdriver: 
     version: 0.0.24
 - capybara: 
-    version: 0.3.8
+    version: 0.3.9
 - configuration: 
     version: 1.1.0
 - diff-lcs: 
@@ -222,8 +228,7 @@ specs:
 - warden: 
     version: 0.10.7
 - devise: 
-    version: 1.1.rc1
-    source: 6
+    version: 1.1.rc2
 - rpx_now: 
     version: 0.6.21
 - devise_rpx_connectable: 
@@ -242,29 +247,29 @@ specs:
 - mysql: 
     version: 2.8.1
 - thor: 
-    version: 0.13.6
+    version: 0.13.7
 - railties: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - rails: 
     version: 3.0.0.beta4
-    source: 7
+    source: 6
 - rspec-core: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.16
     source: 3
 - rspec-expectations: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.16
     source: 2
 - rspec-mocks: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.16
     source: 1
 - rspec: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.16
     source: 4
 - webrat: 
     version: 0.7.1
 - rspec-rails: 
-    version: 2.0.0.beta.12
+    version: 2.0.0.beta.16
     source: 5
 - selenium-client: 
     version: 1.2.18
@@ -272,7 +277,7 @@ specs:
     version: 0.8.4
 - will_paginate: 
     version: 3.0.pre
-hash: 49467c0aa7b3db03c121d3f2400ca2e3fd82965c
+hash: f47e37b70dcbb0984b1be1deb6c5c6d0f8b6e7cf
 sources: 
 - Git: 
     uri: git://github.com/szimek/factory_girl.git
@@ -282,31 +287,28 @@ sources:
 - Git: 
     uri: git://github.com/rspec/rspec-mocks.git
     git: git://github.com/rspec/rspec-mocks.git
-    ref: 0368e2fcedadcd3e362c350f09103968ad4728d5
+    ref: f26af00fd0e1775542bc4fab0d906e88a26a17ad
 - Git: 
     uri: git://github.com/rspec/rspec-expectations.git
     git: git://github.com/rspec/rspec-expectations.git
-    ref: 0cdd882c1f43fcf8b25637705704895818713933
+    ref: f492095b4c6f717dc09647b3049235ee23b8633b
 - Git: 
     uri: git://github.com/rspec/rspec-core.git
     git: git://github.com/rspec/rspec-core.git
-    ref: 42b6846477d89cfd0a2e744abaa52778920abb12
+    ref: 4e796d672fa75e9d02f77a34a2d9312ee42470c7
 - Git: 
     uri: git://github.com/rspec/rspec.git
     git: git://github.com/rspec/rspec.git
-    ref: ad9f6ea17451d683e8abb37e6524fcbf989d90ba
+    ref: bf45b193600e102735ec4750b228947b2b09ad71
 - Git: 
     uri: git://github.com/rspec/rspec-rails.git
     git: git://github.com/rspec/rspec-rails.git
-    ref: 759b953cebede7074f031a90d8137365a7cadc00
-- Git: 
-    uri: git://github.com/plataformatec/devise.git
-    git: git://github.com/plataformatec/devise.git
-    ref: ac0105d15f5bcc78f7a4b496eb52b0a5e9a27100
+    ref: 47eac9f30f3dbe33f10e9a5964a590193be6ec37
 - Git: 
     uri: git://github.com/rails/rails.git
+    tag: v3.0.0.beta4
     git: git://github.com/rails/rails.git
-    ref: 69bc8b26a9be246acc06eaab09063eb97f76aa00
+    ref: df40dbe6f13c6799e972b20dcc1fbf11f0a02c61
 - Rubygems: 
     uri: http://rubygems.org
 - Rubygems: 

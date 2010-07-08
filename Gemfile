@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 source 'http://gemcutter.org'
 
+
 # gem 'rails', '3.0.0.beta3'
 # gem "pg", :group => :production # for heroku
 
 # Bundle edge Rails instead:
-gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', :git => 'git://github.com/rails/rails.git', :tag => 'v3.0.0.beta4'
 # gem 'rails', :git => 'git://github.com/tiennou/rails.git'
 
 #weird dependancies on server (some of which pull in rails beta4 components)
@@ -19,10 +20,12 @@ gem "bundler", "0.9.26"
 gem 'mysql'
 gem 'will_paginate', '3.0.pre'
 gem 'acts-as-taggable-on'
+gem 'acts_as_commentable'
 
 # auth
 gem "rpx_now"
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise', '1.1.rc2' # use tagged version to avoid rail's bundler 1 issue, and that devise master req's rails master
+#:git => 'git://github.com/plataformatec/devise.git'
 gem 'devise_rpx_connectable'
 
 # admin
