@@ -71,10 +71,14 @@ img.logo {
 	margin:0;
 	padding-top:10px;
 }
-	.event h3 {
-		color: #000;
+	.event .title  {
 		font-size: 1.3em;
 	}
+		.event .title a {
+			text-decoration: none;
+			color: #000;
+			cursor: pointer;
+		}
 	
 
 /* Quick preview
