@@ -29,5 +29,4 @@ $(function() {
 	},function(event){
 		slide(event,this,true);
 	});
-	
 });
