@@ -25,9 +25,9 @@ $(function() {
 	};
 	
 	$('.event').toggle(function(event){
-		slide(event,this,true);
-	},function(event){
 		slide(event,this,false);
+	},function(event){
+		slide(event,this,true);
 	});
 	
 });
