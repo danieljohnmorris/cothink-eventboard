@@ -12,10 +12,14 @@ class NilClass
   end
 end
 
-# keeping things DRY and easy to change, here's the canonical display format for dates
+# keeping things DRY and easy to change, here's the canonical display format for LIST dates
+# WHAT DOES BD MEAN?
 module BdDateFormat
   def bd_date_format
     strftime('%a, %d %b').gsub(/0(\d)/, '\1')
+  end
+  def full_date_format
+    strftime('%a, %d %b - %I:%M %p').gsub(/0(\d)/, '\1')
   end
 end
 

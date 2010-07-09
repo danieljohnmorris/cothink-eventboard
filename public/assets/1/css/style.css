@@ -57,7 +57,7 @@ ul.tags a:hover {
 
 a.organiser {
 	color: #696761;
-	text-decoration: none;
+	/*text-decoration: none;*/
 	font-weight: bold;
 }
 
@@ -99,33 +99,8 @@ a.share-button {
 	background-position: 0px 21px;
 }
 
-
-div.comments {
-	display: inline;
+.comments {
 }
-
-.comments a {
-	color: #adaca6;
-	text-decoration: none;
-	font-size: 10px;
-	background-position: top left;
-	line-height: 16px;
-	margin-top: 6px;
-	height: 20px;
-	background-image: url(../images/comment-btn.gif);
-	vertical-align: text-top;
-	background-repeat: no-repeat;
-	text-align: center;
-	display: inline-block;
-	width: 30px;
-}
-
-.comments a:hover {
-	background-position: 0px -20px;
-}
-
-
-
 
 
 
@@ -163,9 +138,6 @@ div.comments {
 .star a.unstarred {
 	background-position: 0px -71px;
 }
-
-
-
 
 
 .small-star {

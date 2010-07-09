@@ -22,7 +22,7 @@
 
 <p>
   <b>Location:</b>
-  <%= @event.location.html_safe %>
+  <%= @event.location.html_safe %> (<%= map_link(@event.location) %>)
 </p>
 
 <p>

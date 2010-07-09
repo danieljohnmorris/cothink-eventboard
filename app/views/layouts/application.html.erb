@@ -1,5 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
- "http://www.w3.org/TR/html4/strict.dtd">
+ "http://www.w3.org/TR/html4/strict.dtd"
+ xmlns:fb="http://www.facebook.com/2008/fbml">
 <html>
 <head>
    	<title>The Business Diary</title>
@@ -24,23 +25,22 @@
 	</script>
 
 	<script type="text/javascript">
-	  RPXNOW.init({appId: 'llmkkabailmhopcajpmc', xdReceiver: '/rpx_xdcomm.html'});
-	</script>
-
-	<script type="text/javascript">
-	  RPXNOW.loadAndRun(['Social'], function () {
-	    var activity = new RPXNOW.Social.Activity(
-	       "Share your comment",
-	       "commented on 'Like My New Perfume?' on cuteoverload.com",
-	       "http://cuteoverload.com/2009/10/26/like-my-new-perfume/");
-	    RPXNOW.Social.publishActivity(activity);
-	  });
+	  //RPXNOW.loadAndRun(['Social'], function () {
+	  //  var activity = new RPXNOW.Social.Activity(
+	  //     "Share your comment",
+	  //     "commented on 'Like My New Perfume?' on cuteoverload.com",
+	  //     "http://cuteoverload.com/2009/10/26/like-my-new-perfume/");
+	  //  RPXNOW.Social.publishActivity(activity);
+	  //});
 	</script>
 		
  	<%= csrf_meta_tag %>
 	<%= yield :head %>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>window.fbAsyncInit = function() { FB.init({ appId: "127165787323577", xfbml: true }); }; (function() { var e = document.createElement('script'); e.async = true; e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js'; document.getElementById('fb-root').appendChild(e); }());</script>
+
 <div id="doc4" class="yui-t7">
 	<div id="hd" role="banner">
         <div class="yui-g">
@@ -50,7 +50,7 @@
 						<img class="logo" alt="The Business Diary" src="/images/logo.png">
 					</a>
 				</h1>
-				<p id="strapline">Find events to improve your business.</p>
+				<p id="strapline">Events to improve you and your business.</p>
            </div>
            <div class="yui-u" id="user">
 				<%= render :partial => "layouts/auth_person" %>
@@ -62,15 +62,13 @@
 	        <div id="messages">
 				
 				<%
+				# DEVISE MESSAGES
+
 				#<p class='info'>This is an info message</p>
 				#<p class='error'>This is an error message</p>
 				#<p class='success'>This is an success message</p>
 				%>
-
-				<%
-				# DEVISE MESSAGES
-				%>
-
+																
 	          <% if notice -%>
 	          <p class='success'>
 	            <%=h notice %>
@@ -115,20 +113,5 @@
 <%= render :partial => 'layouts/uservoice' %>
 <%= render :partial => 'layouts/google_analytics' %>
 <%= javascript_include_rpx(person_session_url) %>
-
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({appId: 'your app id', status: true, cookie: true,
-             xfbml: true});
-  };
-  (function() {
-    var e = document.createElement('script'); e.async = true;
-    e.src = document.location.protocol +
-      '//connect.facebook.net/en_US/all.js';
-    document.getElementById('fb-root').appendChild(e);
-  }());
-</script>
-
 </body>
 </html>

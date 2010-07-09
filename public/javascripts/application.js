@@ -2,6 +2,17 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(function() {	
+	$(".event .attend-button").fancybox({
+		'width'				: '90%',				
+		'height'			: '90%',				
+		'autoScale'			: true,				
+		'transitionIn'		: 'none',			
+		'transitionOut'		: 'none',				
+		'type'				: 'iframe'			
+	});
+		
+	RPXNOW.init({appId: 'llmkkabailmhopcajpmc', xdReceiver: '/rpx_xdcomm.html'});
+
 	// Highlight starred on hover!
 	$(".star a.starred").hover(function() {
 		$("img", this).attr("src", "/images/starred.gif");
@@ -24,9 +35,16 @@ $(function() {
 		}
 	};
 	
-	$('.event').toggle(function(event){
-		slide(event,this,false);
+	$('.event .title').toggle(function(event){
+		$('.comments', $(this).parent()).html('<fb:comments xid="event-1234" numposts="3" width="300"></fb:comments>');
+		//alert(this.parent().id.replace("event", "comments"));
+		FB.XFBML.parse(document.getElementById($(this).parent().attr("id").replace("event", "comments")));
+		$(".comments", $(this).parent()).show();
+		this.title = "Show less info";
+		slide(event, $(this).parent(), false);
 	},function(event){
-		slide(event,this,true);
+		slide(event, $(this).parent(), true);
+		this.title = "Show more info";
+		$(".comments", $(this).parent()).hide();
 	});
 });
