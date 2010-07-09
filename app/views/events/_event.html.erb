@@ -25,7 +25,7 @@
 			<% first_tag = true 
 			event.combined_tags.each do |tag_set| %>
 				<% tag_set.each do |tag| %>
-					<li class="left"><a href="#" <% if first_tag %>class="primary-tag" <% end %>title="<%= tag.name %>"><%= tag.name %></a></li>
+					<li class="left"><a href="#" <% if first_tag %>class="primary-tag" <% end %>title="Find more events tagged with '<%= tag.name %>'"><%= tag.name %></a></li>
 					<% first_tag = false if first_tag
 				end %>
 			<% end %>
