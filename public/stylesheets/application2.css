@@ -123,3 +123,16 @@ img.logo {
 			font-size: 1.2em;
 			border-bottom: 1px solid #ddd;
 		}
+
+
+/* Pagination
+************************/
+
+.pagination {
+	text-align: center;
+	border: 2px solid #DFEDFF;
+	background-color: #EFF6FF;
+	margin: 25px 0 25px 0;
+	padding: 10px;
+	font-size: 1.3em;
+}
