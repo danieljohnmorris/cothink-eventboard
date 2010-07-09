@@ -19,10 +19,6 @@
 	<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.1.css" type="text/css" media="screen" />
 
-	<script type="text/javascript">
-	  var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");
-	  document.write(unescape("%3Cscript src='" + rpxJsHost + "rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
 
 	<script type="text/javascript">
 	  //RPXNOW.loadAndRun(['Social'], function () {
@@ -112,6 +108,16 @@
 </div>
 <%= render :partial => 'layouts/uservoice' %>
 <%= render :partial => 'layouts/google_analytics' %>
-<%= javascript_include_rpx(person_session_url) %>
+
+<script type="text/javascript">
+  var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static.");
+  document.write(unescape("%3Cscript src='" + rpxJsHost +
+"rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  RPXNOW.overlay = true;
+  RPXNOW.language_preference = 'en';
+  RPXNOW.init({appId: 'llmkkabailmhopcajpmc', xdReceiver: '/rpx_xdcomm.html'});
+</script>
 </body>
 </html>

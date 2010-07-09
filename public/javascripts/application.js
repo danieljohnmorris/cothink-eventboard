@@ -11,8 +11,6 @@ $(function() {
 		'type'				: 'iframe'			
 	});
 		
-	RPXNOW.init({appId: 'llmkkabailmhopcajpmc', xdReceiver: '/rpx_xdcomm.html'});
-
 	// Highlight starred on hover!
 	$(".star a.starred").hover(function() {
 		$("img", this).attr("src", "/images/starred.gif");
