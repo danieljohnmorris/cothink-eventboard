@@ -16,10 +16,10 @@ end
 # WHAT DOES BD MEAN?
 module BdDateFormat
   def bd_date_format
-    strftime('%a, %d %b').gsub(/0(\d)/, '\1')
+    strftime('%a, %e %b').gsub(/0(\d)/, '\1')
   end
   def full_date_format
-    strftime('%a, %d %b - %I:%M %p').gsub(/0(\d)/, '\1')
+    strftime('%a, %d %b - %I:%M %p')
   end
 end
 
